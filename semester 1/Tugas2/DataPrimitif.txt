@@ -1,0 +1,5 @@
+Tipe data primitif:
+1. int : absensi, 
+2. Float : pecahan
+3. Char : Index nilai, Grade nilai
+4. Boolean : benar / salah
