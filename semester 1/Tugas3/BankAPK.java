@@ -17,8 +17,7 @@ class BankU{
     int pinX, pin, saldo = 0, nomin;
     byte ch;
     
-    BufferedReader input = new BufferedReader(new
-    InputStreamReader(System.in));
+    BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
     
 
     byte Next(){
