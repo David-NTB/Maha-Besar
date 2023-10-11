@@ -23,7 +23,7 @@ class dataPelanggan{
     String jK;
 
     void daftar(){
-        Scanner input = new Scanner(System.in);
+        Scanner input1 = new Scanner(System.in);
 
         System.out.println("\n==============================");
         System.out.println("MASUKKAN DATA TERLEBIH DAHULU");
@@ -31,19 +31,19 @@ class dataPelanggan{
 
         try{
             System.out.print("Nama Lengkap\t: ");
-            nama = input.nextLine();
+            nama = input1.nextLine();
             System.out.print("Nama Panggilan\t: ");
-            namaP = input.nextLine();
+            namaP = input1.nextLine();
             System.out.print("No. Telepon\t: ");
-            noTelp = input.nextLine();
+            noTelp = input1.nextLine();
             System.out.print("Alamat\t\t: ");
-            alamat = input.nextLine();
+            alamat = input1.nextLine();
             System.out.print("Email\t\t: ");
-            email = input.nextLine();
+            email = input1.nextLine();
             System.out.print("Jenis Kelamin\t: ");
-            jK = input.nextLine();
+            jK = input1.nextLine();
         }catch(Exception e){
-            System.err.println("Terjadi Error\t: " + e);
+            System.err.println("\nTerjadi Error\t: " + e);
         }finally{
             System.out.println("==============================\n");
         }
@@ -93,7 +93,7 @@ class transaksi{
             System.out.print("Jam Pengambilan\t\t: ");
             jamAmbil = input.nextLine();
         }catch(Exception e){
-            System.err.println("Terjadi Error\t: " + e);
+            System.err.println("\nTerjadi Error\t: " + e);
         }finally{
             System.out.println("==============================\n");
         }
