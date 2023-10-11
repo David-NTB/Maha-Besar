@@ -21,9 +21,10 @@ class dataPelanggan{
     String alamat;
     String email;
     String jK;
-
+    Scanner input1 = new Scanner(System.in);
+    
     void daftar(){
-        Scanner input1 = new Scanner(System.in);
+        
 
         System.out.println("\n==============================");
         System.out.println("MASUKKAN DATA TERLEBIH DAHULU");
@@ -71,9 +72,9 @@ class transaksi{
     String jamDaftar;
     String tglAmbil;
     String jamAmbil;
+    Scanner input = new Scanner(System.in);
 
     void catatTransaksi(){
-        Scanner input = new Scanner(System.in);
 
         System.out.println("\n==============================");
         System.out.println("PENCATATAN DATA TRANSAKSI");
@@ -112,4 +113,5 @@ class transaksi{
         System.out.printf("Jam Pengambilan\t\t: %s\n",jamAmbil);  
         System.out.println("==============================\n");      
     }
+    
 }
