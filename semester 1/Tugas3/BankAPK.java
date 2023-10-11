@@ -1,6 +1,7 @@
 package Tugas3;
 
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 
 public class BankAPK {
     public static void main(String[] args) {
@@ -11,16 +12,21 @@ public class BankAPK {
 }
 
 class BankU{
-    String nama, noKTP, noKK, noTelp;
-    int pin, saldo;
+    String nama, noKTP, noKK, noTelp, noRek;
+    int pinX, pin, saldo = 0, nomin;
     byte ch;
+    
+    BufferedReader input = new BufferedReader(new
+    InputStreamReader(System.in));
     
 
     byte Next(){
         try{
-            Scanner input = new Scanner(System.in);
-            System.out.print("Masukkan pilihan atau (0), enter: ");
-            this.ch = input.nextByte();
+            System.out.print("\nTekan ENTER untuk lanjut");
+            String temp = "";
+            temp = input.readLine();
+            Menu();
+
             System.out.println("\n");
             new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
             
@@ -35,17 +41,21 @@ class BankU{
     void Menu(){
         try{
             new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+            String temp = "";
+
             System.out.println("==============================");
             System.out.println("SELAMAT DATANG DI APLIKASI BANK-U");
             System.out.println("==============================");
-            System.out.println("Masukkan pilihan(angka): ");
             System.out.println("1. Tambah rekening baru");
             System.out.println("2. Lihat informasi rekening");
             System.out.println("3. Tambah saldo");
             System.out.println("4. Tarik Saldo");
             System.out.println("5. Lihat Saldo");
             System.out.println("==============================\n");
-            this.ch = Next();
+            
+            System.out.print("Masukkan pilihan(angka): ");
+            temp = input.readLine();
+            this.ch = Byte.parseByte(temp);
 
             switch (this.ch) {
                 case 1:
@@ -82,22 +92,23 @@ class BankU{
         try{
             new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
             
-            Scanner input = new Scanner(System.in);
+            String temp = "";
 
             System.out.println("==============================");
             System.out.println("Ini tambah akun");
             System.out.println("==============================\n");
 
             System.out.print("Nama Lengkap\t: ");
-            nama = input.nextLine();
+            nama = input.readLine();
             System.out.print("No. KTP\t\t: ");
-            noKTP = input.nextLine();
+            noKTP = input.readLine();
             System.out.print("No. KK\t\t: ");
-            noKK = input.nextLine();
+            noKK = input.readLine();
             System.out.print("No. Telepon\t: ");
-            noTelp = input.nextLine();
+            noTelp = input.readLine();
             System.out.print("Pin Baru\t: ");
-            pin = input.nextInt();
+            temp = input.readLine();
+            pinX = Integer.parseInt(temp);
 
         } catch(Exception e){
             System.err.println("Terjadi kesalahan: " + e);
@@ -119,7 +130,7 @@ class BankU{
             System.out.printf("No. KTP\t\t: %s\n", noKTP);
             System.out.printf("No. KK\t\t: %s\n", noKK);
             System.out.printf("No. Telepon\t: %s\n", noTelp);
-            System.out.printf("Pin Baru\t: %d\n", pin);
+            System.out.printf("Pin Baru\t: %d\n", pinX);
 
             Next();
 
@@ -132,10 +143,29 @@ class BankU{
     void TambahSaldo(){
         try{
             new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
-        
+            
+            String temp = "";
+
             System.out.println("==============================");
             System.out.println("Ini tambah saldo");
             System.out.println("==============================\n");
+
+            System.out.print("Masukkan nomor rekening\t: ");
+            noRek = input.readLine();
+            System.out.println("Masukkan Nominal\t: ");
+            temp = input.readLine();
+            nomin = Integer.parseInt(temp);
+            System.out.println("Masukkan pin anda: ");
+            temp = input.readLine();
+            pin = Integer.parseInt(temp);
+
+            if(pin == pinX){
+                saldo = saldo + nomin;
+            } else{
+                System.out.println("Pin yang anda masukkan salah");
+            }
+
+            Next();
 
         } catch(Exception e){
             System.err.println("Terjadi kesalahan: " + e);
