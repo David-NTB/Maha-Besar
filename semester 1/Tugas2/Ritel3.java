@@ -16,9 +16,10 @@ class Barang{
     int berat;
     double hargaBeli;
     double hargaJual;
+    Scanner input = new Scanner(System.in);
 
     public void inputData() {
-        Scanner input = new Scanner(System.in);
+        
         try{
             System.out.println("Inputan Data Barang ");
             System.out.print("Kode : ");
@@ -37,9 +38,7 @@ class Barang{
 
         } catch(Exception e){
             System.out.println(e);
-        } finally{
-            input.close();
-        }
+        } 
         
     }
 

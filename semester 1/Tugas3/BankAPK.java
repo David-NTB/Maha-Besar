@@ -25,6 +25,7 @@ class BankU{
             System.out.print("\nTekan ENTER untuk lanjut");
             String temp = "";
             temp = input.readLine();
+            System.out.print(temp);
             Menu();
 
             System.out.println("\n");
