@@ -71,4 +71,11 @@ class NilaiMK{
     } 
 }
 
+/*
+ 1. Keyword "this" digunakan untuk mengakses variabel atau method global dari kelasnya
+ 2. Cara penggunaan:
+    this.nilai = 10;
+    this.Data();
+ 
+ */
 
