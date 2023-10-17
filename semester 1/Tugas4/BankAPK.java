@@ -200,7 +200,7 @@ public class BankAPK {
         
     }
     
-    void lihatSaldo() throws IOException {
+    void lihatSaldo(){
         cls();
 
         System.out.println("==============================");
@@ -212,53 +212,63 @@ public class BankAPK {
 
     }
     
-    void tambahSaldo() throws IOException {
-        cls();
-        
-        System.out.println("==============================");
-        System.out.println("TAMBAH SALDO BANK-U");
-        System.out.println("==============================\n");
-        
-        String temp = "";
-        System.out.print("Masukkan nomor rekening\t: ");
-        noRekX = input.readLine();
-        System.out.print("Masukkan nominal\t: ");
-        temp = input.readLine();
-        nomin = Integer.parseInt(temp);
-        System.out.print("Masukkan pin anda\t: ");
-        temp = input.readLine();
-        pinX = Integer.parseInt(temp);
-
-        if((noRekX.equals(noRek)) && (pinX == pin)){
-            saldo = saldo + nomin;
-            System.out.println("\nTransaksi berhasil");
-        } else {
-            System.out.println("\nNo rekening atau pin salah");
+    void tambahSaldo(){
+        try {
+            cls();
+            
+            System.out.println("==============================");
+            System.out.println("TAMBAH SALDO BANK-U");
+            System.out.println("==============================\n");
+            
+            String temp = "";
+            System.out.print("Masukkan nomor rekening\t: ");
+            noRekX = input.readLine();
+            System.out.print("Masukkan nominal\t: ");
+            temp = input.readLine();
+            nomin = Integer.parseInt(temp);
+            System.out.print("Masukkan pin anda\t: ");
+            temp = input.readLine();
+            pinX = Integer.parseInt(temp);
+    
+            if((noRekX.equals(noRek)) && (pinX == pin)){
+                saldo = saldo + nomin;
+                System.out.println("\nTransaksi berhasil");
+            } else {
+                System.out.println("\nNo rekening atau pin salah");
+            }
+            
+        } catch (Exception e) {
+            msg("Terjadi kesalahan");
         }
     }
 
-    void tarikSaldo() throws IOException {
-        cls();
-        
-        System.out.println("==============================");
-        System.out.println("TARIK SALDO BANK-U");
-        System.out.println("==============================\n");
-        
-        String temp = "";
-        System.out.print("Masukkan nomor rekening\t: ");
-        noRekX = input.readLine();
-        System.out.print("Masukkan nominal\t: ");
-        temp = input.readLine();
-        nomin = Integer.parseInt(temp);
-        System.out.print("Masukkan pin anda\t: ");
-        temp = input.readLine();
-        pinX = Integer.parseInt(temp);
-
-        if((noRekX.equals(noRek)) && (pinX == pin)){
-            saldo = saldo - nomin;
-            System.out.println("\nTransaksi berhasil");
-        } else {
-            System.out.println("\nNo rekening atau pin salah");
+    void tarikSaldo(){
+        try {
+            cls();
+            
+            System.out.println("==============================");
+            System.out.println("TARIK SALDO BANK-U");
+            System.out.println("==============================\n");
+            
+            String temp = "";
+            System.out.print("Masukkan nomor rekening\t: ");
+            noRekX = input.readLine();
+            System.out.print("Masukkan nominal\t: ");
+            temp = input.readLine();
+            nomin = Integer.parseInt(temp);
+            System.out.print("Masukkan pin anda\t: ");
+            temp = input.readLine();
+            pinX = Integer.parseInt(temp);
+    
+            if((noRekX.equals(noRek)) && (pinX == pin)){
+                saldo = saldo - nomin;
+                System.out.println("\nTransaksi berhasil");
+            } else {
+                System.out.println("\nNo rekening atau pin salah");
+            }
+            
+        } catch (Exception e) {
+            msg("Terjadi kesalahan");
         }
     }
 }
