@@ -232,7 +232,18 @@ public class BankAPK {
     
             if((noRekX.equals(noRek)) && (pinX == pin)){
                 saldo = saldo + nomin;
-                System.out.println("\nTransaksi berhasil");
+
+                if(saldo > 10000000){
+                    System.out.println("\nTransaksi berhasil");
+                    System.out.println("Anda mendapat bonus 1 bolpoin cantik");
+                } else if(saldo > 1000000){
+                    System.out.println("\nTransaksi berhasil");
+                    System.out.println("Anda mendapat bonus voucher belanja Rp 50000");
+                } else{
+                    System.out.println("\nTransaksi berhasil");
+                    int a = saldo / 10000000;
+                    System.out.println("Anda mendapat bonus voucher belanja Rp " + a*50000);
+                }
             } else {
                 System.out.println("\nNo rekening atau pin salah");
             }
@@ -262,7 +273,15 @@ public class BankAPK {
     
             if((noRekX.equals(noRek)) && (pinX == pin)){
                 saldo = saldo - nomin;
-                System.out.println("\nTransaksi berhasil");
+
+                if(saldo < 100000){
+                    saldo = saldo + nomin;
+                    System.out.println("\nTransaksi gagal");
+                    System.out.println("Saldo tidak boleh kurang dari saldo minimal");
+                } else{
+                    System.out.println("\nTransaksi berhasil");
+                }
+
             } else {
                 System.out.println("\nNo rekening atau pin salah");
             }
