@@ -11,6 +11,7 @@ public class BankAPK {
 
     String nama, noKK, noKTP, noTelp, noRek;
     int saldo, pin;
+    boolean acc = false;
     BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
     
     void next(){
@@ -21,7 +22,7 @@ public class BankAPK {
             System.out.println(temp);
             menu();
         } catch (Exception e) {
-            System.err.println("Error next");
+            msg("Error next()");
         }
     }
 
@@ -29,12 +30,16 @@ public class BankAPK {
         try {
             new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
         } catch (Exception e) {
-            System.err.println("Error cls");
+            msg("Error cls()");
         }
     }
 
+    void msg(String message){
+        System.out.println("Message: " + message);
+    }
+
     void closeAPK(){
-        System.out.println("Message: Menutup aplikasi");
+        msg("Menutup aplikasi");
         cls();
         System.exit(0);
     }
@@ -66,27 +71,38 @@ public class BankAPK {
             switch (ch) {
                 case 1:
                     tambahAkun();
-                    next();
                     break;
 
                 case 2:
-                    infoAkun();
-                    next();
+                    if(acc){
+                        infoAkun();
+                    } else{
+                        msg("Anda belum memiliki rekening");
+                    }
                     break;
                 
                 case 3:
-                    lihatSaldo();
-                    next();
+                    if(acc){
+                        lihatSaldo();
+                    } else{
+                        msg("Anda belum memiliki rekening");
+                    }
                     break;
                     
                 case 4:
-                    tambahSaldo();
-                    next();
+                    if(acc){
+                        tambahSaldo();
+                    } else{
+                        msg("Anda belum memiliki rekening");
+                    }
                     break;
                     
                 case 5:
-                    tarikSaldo();
-                    next();
+                    if(acc){
+                        tarikSaldo();
+                    } else{
+                        msg("Anda belum memiliki rekening");
+                    }
                     break;
             
                 case 0:
@@ -94,12 +110,11 @@ public class BankAPK {
                     break;
 
                 default:
-                    System.out.println("Message: Pilihan tidak ada");
-                    next();
+                    msg("Pilihan tidak ada");
                     break;
             }
         } catch (Exception e){
-                System.out.println("Message: Pilihan tidak ada");
+                msg("Pilihan tidak ada");
         } finally{
             next();
         }
@@ -125,23 +140,26 @@ public class BankAPK {
                 System.out.print("Masukkan pin baru: ");
                 temp = input.readLine();
                 pin = Integer.parseInt(temp);
+
                 System.out.println("\n==============================\n");
 
-                System.out.println("Rekening berhasil dibuat");
                 noRek = "130806125170102";
                 saldo = saldo + setAwal;
+                acc = true;
+                
+                System.out.println("Rekening berhasil dibuat");
 
             } else {
                 System.out.println("\n==============================\n");
                 System.out.println("Setoran awal tidak mencukupi");
                 System.out.println("Pembuatan rekening gagal");
-                nama = null;
+                
+                saldo = saldo + setAwal;
+                acc = false;
             }
-
-            next();
             
         } catch (Exception e) {
-            System.out.println("Message: Terjadi kesalahan");
+            msg("Terjadi kesalahan");
         }
     }
 
@@ -153,13 +171,13 @@ public class BankAPK {
             System.out.println("PEMBUATAN REKENING BANK-U");
             System.out.println("==============================\n");
     
-            System.out.print("Nama Lengkap: ");
+            System.out.print("Nama Lengkap\t: ");
             nama = input.readLine();
-            System.out.print("No. KTP: ");
+            System.out.print("No. KTP\t\t: ");
             noKTP = input.readLine();
-            System.out.print("No. Kartu Keluarga: ");
+            System.out.print("No. KK\t\t: ");
             noKK = input.readLine();
-            System.out.print("No. Telepon: ");
+            System.out.print("No. Telepon\t: ");
             noTelp = input.readLine();
 
             System.out.println("\n==============================");
@@ -169,40 +187,62 @@ public class BankAPK {
             setAwal();
             
         } catch (Exception e) {
-            System.out.println("Message: Terjadi kesalahan");
+            msg("Terjadi kesalahan");        
         }
         
     }
 
     void infoAkun(){
-        cls();
-        
-        System.out.println("==============================");
-        System.out.println("INFO AKUN BANK-U ANDA");
-        System.out.println("==============================\n");
+        try {
+            cls();
+            
+            System.out.println("==============================");
+            System.out.println("INFO AKUN BANK-U ANDA");
+            System.out.println("==============================\n");
+
+            
+            
+        } catch (Exception e) {
+            msg("Terjadi kesalahan");
+        }
     }
     
     void lihatSaldo(){
-        cls();
-        
-        System.out.println("==============================");
-        System.out.println("SALDO AKUN BANK-U ANDA");
-        System.out.println("==============================\n");
+         try {
+            cls();
+            
+            System.out.println("==============================");
+            System.out.println("SALDO AKUN BANK-U ANDA");
+            System.out.println("==============================\n");
+            
+        } catch (Exception e) {
+            msg("Terjadi kesalahan");
+        }
     }
     
     void tambahSaldo(){
-        cls();
-        
-        System.out.println("==============================");
-        System.out.println("TAMBAH SALDO BANK-U");
-        System.out.println("==============================\n");
+         try {
+            cls();
+            
+            System.out.println("==============================");
+            System.out.println("TAMBAH SALDO BANK-U");
+            System.out.println("==============================\n");
+            
+        } catch (Exception e) {
+            msg("Terjadi kesalahan");
+        }
     }
 
     void tarikSaldo(){
-        cls();
-        
-        System.out.println("==============================");
-        System.out.println("TARIK SALDO BANK-U");
-        System.out.println("==============================\n");
+         try {
+            cls();
+            
+            System.out.println("==============================");
+            System.out.println("TARIK SALDO BANK-U");
+            System.out.println("==============================\n");
+            
+        } catch (Exception e) {
+            msg("Terjadi kesalahan");
+        }
     }
 }
