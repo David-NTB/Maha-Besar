@@ -233,10 +233,10 @@ public class BankAPK {
             if((noRekX.equals(noRek)) && (pinX == pin)){
                 saldo = saldo + nomin;
 
-                if(saldo > 10000000){
+                if(saldo < 1000000){
                     System.out.println("\nTransaksi berhasil");
                     System.out.println("Anda mendapat bonus 1 bolpoin cantik");
-                } else if(saldo > 1000000){
+                } else if(saldo < 10000000){
                     System.out.println("\nTransaksi berhasil");
                     System.out.println("Anda mendapat bonus voucher belanja Rp 50000");
                 } else{
