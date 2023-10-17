@@ -1,22 +1,24 @@
 package Tugas4;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class BankAPK {
     public static void main(String[] args) {
         BankAPK apk = new BankAPK();
         apk.menu();
+
     }
 
-    String nama, noKK, noKTP, noTelp, noRek;
-    int saldo, pin;
+    String nama, noKK, noKTP, noTelp, noRek, noRekX;
+    int saldo, pin, pinX, nomin;
     boolean acc = false;
     BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
     
     void next(){
         try {
-            System.out.println("\n==============================");
+            System.out.println("\n==============================\n");
             System.out.print("Tekan ENTER untuk lanjut");
             String temp = input.readLine();
             System.out.println(temp);
@@ -135,8 +137,9 @@ public class BankAPK {
             temp = input.readLine();
             
             int setAwal = Integer.parseInt(temp);
+            saldo = saldo + setAwal;
             
-            if (setAwal >= 100000){
+            if (saldo >= 100000){
                 System.out.print("Masukkan pin baru: ");
                 temp = input.readLine();
                 pin = Integer.parseInt(temp);
@@ -144,7 +147,7 @@ public class BankAPK {
                 System.out.println("\n==============================\n");
 
                 noRek = "130806125170102";
-                saldo = saldo + setAwal;
+                
                 acc = true;
                 
                 System.out.println("Rekening berhasil dibuat");
@@ -154,7 +157,6 @@ public class BankAPK {
                 System.out.println("Setoran awal tidak mencukupi");
                 System.out.println("Pembuatan rekening gagal");
                 
-                saldo = saldo + setAwal;
                 acc = false;
             }
             
@@ -163,86 +165,102 @@ public class BankAPK {
         }
     }
 
-    void tambahAkun(){
-        try {
-            cls();
-    
-            System.out.println("==============================");
-            System.out.println("PEMBUATAN REKENING BANK-U");
-            System.out.println("==============================\n");
-    
-            System.out.print("Nama Lengkap\t: ");
-            nama = input.readLine();
-            System.out.print("No. KTP\t\t: ");
-            noKTP = input.readLine();
-            System.out.print("No. KK\t\t: ");
-            noKK = input.readLine();
-            System.out.print("No. Telepon\t: ");
-            noTelp = input.readLine();
+    void tambahAkun() throws IOException {
+        cls();
 
-            System.out.println("\n==============================");
-            System.out.print("\nTekan ENTER untuk menyimpan");
-            String temp = input.readLine();
+        System.out.println("==============================");
+        System.out.println("PEMBUATAN REKENING BANK-U");
+        System.out.println("==============================\n");
 
-            setAwal();
+        System.out.print("Nama Lengkap\t: ");
+        nama = input.readLine();
+        System.out.print("No. KTP\t\t: ");
+        noKTP = input.readLine();
+        System.out.print("No. KK\t\t: ");
+        noKK = input.readLine();
+        System.out.print("No. Telepon\t: ");
+        noTelp = input.readLine();
+
+        System.out.println("\n==============================\n");
+        System.out.print("Tekan ENTER untuk menyimpan");
+        String temp = input.readLine();
+
+        setAwal();
             
-        } catch (Exception e) {
-            msg("Terjadi kesalahan");        
-        }
         
     }
 
     void infoAkun(){
-        try {
-            cls();
+        cls();
             
-            System.out.println("==============================");
-            System.out.println("INFO AKUN BANK-U ANDA");
-            System.out.println("==============================\n");
+        System.out.println("==============================");
+        System.out.println("INFO AKUN BANK-U ANDA");
+        System.out.println("==============================\n");
 
-            
-            
-        } catch (Exception e) {
-            msg("Terjadi kesalahan");
-        }
+        System.out.printf("Nomor Rekening\t: %s\n", noRek);
+        System.out.printf("Pin\t\t: %d\n", pin);
+
+        
     }
     
-    void lihatSaldo(){
-         try {
-            cls();
-            
-            System.out.println("==============================");
-            System.out.println("SALDO AKUN BANK-U ANDA");
-            System.out.println("==============================\n");
-            
-        } catch (Exception e) {
-            msg("Terjadi kesalahan");
-        }
+    void lihatSaldo() throws IOException {
+        cls();
+
+        System.out.println("==============================");
+        System.out.println("SALDO AKUN BANK-U ANDA");
+        System.out.println("==============================\n");
+        
+        
+
+
+
     }
     
-    void tambahSaldo(){
-         try {
-            cls();
-            
-            System.out.println("==============================");
-            System.out.println("TAMBAH SALDO BANK-U");
-            System.out.println("==============================\n");
-            
-        } catch (Exception e) {
-            msg("Terjadi kesalahan");
+    void tambahSaldo() throws IOException {
+        cls();
+        
+        System.out.println("==============================");
+        System.out.println("TAMBAH SALDO BANK-U");
+        System.out.println("==============================\n");
+        
+        String temp = "";
+        System.out.println("Masukkan nomor rekening\t: ");
+        noRekX = input.readLine();
+        System.out.println("Masukkan nominal\t: ");
+        temp = input.readLine();
+        nomin = Integer.parseInt(temp);
+        System.out.print("Masukkan pin anda\t: ");
+        temp = input.readLine();
+        pinX = Integer.parseInt(temp);
+
+        if((noRekX.equals(noRek)) && (pinX == pin)){
+
+        } else {
+            System.out.println("asa");
         }
     }
 
     void tarikSaldo(){
-         try {
-            cls();
-            
-            System.out.println("==============================");
-            System.out.println("TARIK SALDO BANK-U");
-            System.out.println("==============================\n");
-            
-        } catch (Exception e) {
-            msg("Terjadi kesalahan");
+        cls();
+        
+        System.out.println("==============================");
+        System.out.println("TARIK SALDO BANK-U");
+        System.out.println("==============================\n");
+        
+        String temp = "";
+        System.out.println("Masukkan nomor rekening\t: ");
+        noRekX = input.readLine();
+        System.out.println("Masukkan nominal\t: ");
+        temp = input.readLine();
+        nomin = Integer.parseInt(temp);
+        System.out.print("Masukkan pin anda\t: ");
+        temp = input.readLine();
+        pinX = Integer.parseInt(temp);
+
+        if((noRekX.equals(noRek)) && (pinX == pin)){
+
+        } else {
+            System.out.println("asa");
         }
     }
 }
