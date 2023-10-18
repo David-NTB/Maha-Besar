@@ -2,6 +2,10 @@ package Tugas4;
 
 import java.util.Scanner;
 
+// break berfungsi untuk menghentikan switch
+// jika break dihapus, switch akan menjalankan semua kode di dalamnya
+// this. berfungsi untuk membedakan antara local variable dan instance variable
+
 public class NilaiMK2 {
     private String nim;
     private int kehadiran;
@@ -35,6 +39,10 @@ public class NilaiMK2 {
 
             case 3:
                 System.out.println("Keluar dari aplikasi...");
+                break;
+
+            default:
+                System.out.println("Inputan yang anda masukkan tidak valid");
                 break;
         }
     }
@@ -75,9 +83,18 @@ public class NilaiMK2 {
         System.out.println("Assessment 2 : " + a2);
         System.out.println("Assessment 3 : " + a3);
         System.out.println("Tugas : " + t);
-        System.out.println("Jml Kehadiran : " + this.kehadiran + "%");
-        System.out.println("Nilai Akhir : " + this.nilaiAkhir);
-        System.out.println("Indeks Akhir : " + this.indexAkhir);
+
+        if (this.kehadiran >= 80) {
+            System.out.println("Jml Kehadiran : " + this.kehadiran + "%");
+            System.out.println("Nilai Akhir : " + this.nilaiAkhir);
+            System.out.println("Indeks Akhir : " + this.indexAkhir);
+
+        } else {
+            System.out.println("Jumlah kehadiran kurang dari 80");
+            System.out.println("Indeks Akhir F, dan anda tidak lulus");
+            System.out.println("Salah satu syarat lulus, kehadiran>=80");
+        }
+
     }
 
     void MkTeoriPraktikum() {
@@ -107,8 +124,7 @@ public class NilaiMK2 {
         kehadiran = inp.nextInt();
 
         nilaiPraktikum = hitungNilaiPraktikum(nilaiMingguan, nilaiTA);
-        nilaiAkhir = hitungNilaiAkhirTeoriPraktikum(a1, a2, a3,
-                tugas, nilaiPraktikum);
+        nilaiAkhir = hitungNilaiAkhirTeoriPraktikum(a1, a2, a3, tugas, nilaiPraktikum);
         indexAkhir = hitungIndexAkhir(nilaiAkhir, kehadiran);
 
         viewMkTeoriPraktikum(a1, a2, a3, tugas, nilaiPraktikum);
@@ -132,9 +148,18 @@ public class NilaiMK2 {
         System.out.println("Assessment 3 : " + a3);
         System.out.println("Tugas : " + t);
         System.out.println("Nilai Praktikum : " + np);
-        System.out.println("Jumlah Kehadiran : " + this.kehadiran + "%");
-        System.out.println("Nilai Akhir : " + this.nilaiAkhir);
-        System.out.println("Indeks Akhir : " + this.indexAkhir);
+
+        if (this.kehadiran >= 80) {
+            System.out.println("Jumlah Kehadiran : " + this.kehadiran + "%");
+            System.out.println("Nilai Akhir : " + this.nilaiAkhir);
+            System.out.println("Indeks Akhir : " + this.indexAkhir);
+
+        } else {
+            System.out.println("Jumlah kehadiran kurang dari 80");
+            System.out.println("Indeks Akhir F, dan anda tidak lulus");
+            System.out.println("Salah satu syarat lulus, kehadiran>=80");
+        }
+
     }
 
     char hitungIndexAkhir(double na, double h) {
@@ -154,5 +179,4 @@ public class NilaiMK2 {
 
         return indeks;
     }
-
 }

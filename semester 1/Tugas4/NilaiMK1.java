@@ -15,12 +15,26 @@ class NilaiMK {
     private int a3;
     private int tugas;
     private int prakt;
+    private int kehadiran;
     private double nilai;
     private char index;
+
     Scanner inp = new Scanner(System.in);
 
     char cekIndeks(double nilaiAkhir) {
         char idx = ' ';
+        double nilaiBaru;
+
+        if (kehadiran > 80) {
+            nilaiBaru = nilaiAkhir;
+        } else if (kehadiran <= 80 && kehadiran >= 50) {
+            double perubahan = (0.2) * nilaiAkhir;
+            nilaiBaru = nilaiAkhir - perubahan;
+            this.nilai = nilaiBaru;
+        } else if (kehadiran < 50) {
+            nilaiBaru = 0;
+            this.nilai = nilaiBaru;
+        }
 
         if (nilai >= 80) {
             idx = 'A';
@@ -30,8 +44,10 @@ class NilaiMK {
             idx = 'B';
         } else if (nilai >= 20) {
             idx = 'D';
-        } else {
+        } else if (nilai > 0) {
             idx = 'E';
+        } else {
+            idx = 'F';
         }
 
         return idx;
@@ -56,6 +72,9 @@ class NilaiMK {
         this.tugas = inp.nextInt();
         System.out.print("Nilai praktikum : ");
         this.prakt = inp.nextInt();
+        System.out.print("Jumlah kehadiran : ");
+        this.kehadiran = inp.nextInt();
+
         hitungNilai(this.a1, this.a2, this.a3, this.tugas, this.prakt);
     }
 

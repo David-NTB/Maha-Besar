@@ -4,9 +4,9 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class BankAPK {
+public class TA1 {
     public static void main(String[] args) {
-        BankAPK apk = new BankAPK();
+        TA1 apk = new TA1();
         apk.menu();
 
     }
@@ -15,8 +15,8 @@ public class BankAPK {
     int saldo, pin, pinX, nomin;
     boolean acc = false;
     BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
-    
-    void next(){
+
+    void next() {
         try {
             System.out.println("\n==============================\n");
             System.out.print("Tekan ENTER untuk lanjut");
@@ -28,7 +28,7 @@ public class BankAPK {
         }
     }
 
-    void cls(){
+    void cls() {
         try {
             new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
         } catch (Exception e) {
@@ -36,20 +36,20 @@ public class BankAPK {
         }
     }
 
-    void msg(String message){
+    void msg(String message) {
         System.out.println("Message: " + message);
     }
 
-    void closeAPK(){
+    void closeAPK() {
         msg("Menutup aplikasi");
         cls();
         System.exit(0);
     }
 
-    void menu(){
+    void menu() {
         byte ch;
 
-        try{
+        try {
             cls();
             String temp = "";
 
@@ -63,12 +63,10 @@ public class BankAPK {
             System.out.println("5. Tarik Saldo");
             System.out.println("0. Tutup aplikasi");
             System.out.println("\n==============================\n");
-            
+
             System.out.print("Masukan pilihan(angka): ");
             temp = input.readLine();
             ch = Byte.parseByte(temp);
-            
-            
 
             switch (ch) {
                 case 1:
@@ -76,37 +74,37 @@ public class BankAPK {
                     break;
 
                 case 2:
-                    if(acc){
+                    if (acc) {
                         infoAkun();
-                    } else{
+                    } else {
                         msg("Anda belum memiliki rekening");
                     }
                     break;
-                
+
                 case 3:
-                    if(acc){
+                    if (acc) {
                         lihatSaldo();
-                    } else{
+                    } else {
                         msg("Anda belum memiliki rekening");
                     }
                     break;
-                    
+
                 case 4:
-                    if(acc){
+                    if (acc) {
                         tambahSaldo();
-                    } else{
+                    } else {
                         msg("Anda belum memiliki rekening");
                     }
                     break;
-                    
+
                 case 5:
-                    if(acc){
+                    if (acc) {
                         tarikSaldo();
-                    } else{
+                    } else {
                         msg("Anda belum memiliki rekening");
                     }
                     break;
-            
+
                 case 0:
                     closeAPK();
                     break;
@@ -115,16 +113,15 @@ public class BankAPK {
                     msg("Pilihan tidak ada");
                     break;
             }
-        } catch (Exception e){
-                msg("Pilihan tidak ada");
-        } finally{
+        } catch (Exception e) {
+            msg("Pilihan tidak ada");
+        } finally {
             next();
         }
-        
-        
+
     }
 
-    void setAwal(){
+    void setAwal() {
         try {
             cls();
             String temp = "";
@@ -135,28 +132,28 @@ public class BankAPK {
 
             System.out.print("Masukkan setoran awal: ");
             temp = input.readLine();
-            
+
             int setAwal = Integer.parseInt(temp);
             saldo = saldo + setAwal;
-            
-            if (saldo >= 100000){
+
+            if (saldo >= 100000) {
                 System.out.print("Masukkan pin baru: ");
                 temp = input.readLine();
                 pin = Integer.parseInt(temp);
 
                 noRek = "130806125170102";
-                
+
                 acc = true;
-                
+
                 System.out.println("\nRekening berhasil dibuat");
 
             } else {
                 System.out.println("\nSetoran awal tidak mencukupi");
                 System.out.println("Pembuatan rekening gagal");
-                
+
                 acc = false;
             }
-            
+
         } catch (Exception e) {
             msg("Terjadi kesalahan");
         }
@@ -184,13 +181,12 @@ public class BankAPK {
         System.out.println(temp);
 
         setAwal();
-            
-        
+
     }
 
-    void infoAkun(){
+    void infoAkun() {
         cls();
-            
+
         System.out.println("==============================");
         System.out.println("INFO AKUN BANK-U ANDA");
         System.out.println("==============================\n");
@@ -198,29 +194,28 @@ public class BankAPK {
         System.out.printf("Nomor Rekening\t: %s\n", noRek);
         System.out.printf("Pin\t\t: %d\n", pin);
 
-        
     }
-    
-    void lihatSaldo(){
+
+    void lihatSaldo() {
         cls();
 
         System.out.println("==============================");
         System.out.println("SALDO AKUN BANK-U ANDA");
         System.out.println("==============================\n");
-        
+
         System.out.printf("Nomor rekening\t: %s\n", noRek);
         System.out.printf("Saldo anda\t: %d\n", saldo);
 
     }
-    
-    void tambahSaldo(){
+
+    void tambahSaldo() {
         try {
             cls();
-            
+
             System.out.println("==============================");
             System.out.println("TAMBAH SALDO BANK-U");
             System.out.println("==============================\n");
-            
+
             String temp = "";
             System.out.print("Masukkan nomor rekening\t: ");
             noRekX = input.readLine();
@@ -230,38 +225,38 @@ public class BankAPK {
             System.out.print("Masukkan pin anda\t: ");
             temp = input.readLine();
             pinX = Integer.parseInt(temp);
-    
-            if((noRekX.equals(noRek)) && (pinX == pin)){
+
+            if ((noRekX.equals(noRek)) && (pinX == pin)) {
                 saldo = saldo + nomin;
 
-                if(saldo < 1000000){
+                if (saldo < 1000000) {
                     System.out.println("\nTransaksi berhasil");
                     System.out.println("Anda mendapat bonus 1 bolpoin cantik");
-                } else if(saldo < 10000000){
+                } else if (saldo < 10000000) {
                     System.out.println("\nTransaksi berhasil");
                     System.out.println("Anda mendapat bonus voucher belanja Rp 50000");
-                } else{
+                } else {
                     System.out.println("\nTransaksi berhasil");
                     int a = saldo / 10000000;
-                    System.out.println("Anda mendapat bonus voucher belanja Rp " + a*50000);
+                    System.out.println("Anda mendapat bonus voucher belanja Rp " + a * 50000);
                 }
             } else {
                 System.out.println("\nNo rekening atau pin salah");
             }
-            
+
         } catch (Exception e) {
             msg("Terjadi kesalahan");
         }
     }
 
-    void tarikSaldo(){
+    void tarikSaldo() {
         try {
             cls();
-            
+
             System.out.println("==============================");
             System.out.println("TARIK SALDO BANK-U");
             System.out.println("==============================\n");
-            
+
             String temp = "";
             System.out.print("Masukkan nomor rekening\t: ");
             noRekX = input.readLine();
@@ -271,22 +266,22 @@ public class BankAPK {
             System.out.print("Masukkan pin anda\t: ");
             temp = input.readLine();
             pinX = Integer.parseInt(temp);
-    
-            if((noRekX.equals(noRek)) && (pinX == pin)){
+
+            if ((noRekX.equals(noRek)) && (pinX == pin)) {
                 saldo = saldo - nomin;
 
-                if(saldo < 100000){
+                if (saldo < 100000) {
                     saldo = saldo + nomin;
                     System.out.println("\nTransaksi gagal");
                     System.out.println("Saldo tidak boleh kurang dari saldo minimal");
-                } else{
+                } else {
                     System.out.println("\nTransaksi berhasil");
                 }
 
             } else {
                 System.out.println("\nNo rekening atau pin salah");
             }
-            
+
         } catch (Exception e) {
             msg("Terjadi kesalahan");
         }

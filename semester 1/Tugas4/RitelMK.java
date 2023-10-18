@@ -7,6 +7,7 @@ class RitelMK {
     public static void main(String[] args) {
         Barang brg1 = new Barang();
         Barang brg2 = new Barang();
+
         brg1.inputData();
         brg2.inputData();
 
@@ -54,7 +55,16 @@ class Barang {
         System.out.println("Kode : " + kode);
         System.out.println("Jumlah Stok : " + stock);
         System.out.println("Harga Jual : " + hargaJual);
+        
+        warning(this.stock);
         pressEnter();
+    }
+
+    public void warning(int stock){
+        if(stock > 5){
+        } else{
+            System.out.println("Barang sudah hampir habis, segera lakukan penambahan stok");
+        }
     }
 
     public void jualStock(int ubah) {
