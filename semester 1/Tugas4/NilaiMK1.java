@@ -2,15 +2,13 @@ package Tugas4;
 
 import java.util.Scanner;
 
-public class NilaiMK1 {
+class NilaiMK {
     public static void main(String[] args) {
         NilaiMK nmk = new NilaiMK();
         nmk.inputData();
         nmk.viewNilai();
     }
-}
 
-class NilaiMK{
     private String nim;
     private int a1;
     private int a2;
@@ -21,28 +19,30 @@ class NilaiMK{
     private char index;
     Scanner inp = new Scanner(System.in);
 
-    char cekIndeks(double nilaiAkhir){
-        char idx=' ';
-        if (nilai>=80)
-        idx='A';
-        else if (nilai>=60)
-        idx='B';
-        else if (nilai>=40)
-        idx='B';
-        else if (nilai>=20)
-        idx='D';
-        else
-        idx='E';
+    char cekIndeks(double nilaiAkhir) {
+        char idx = ' ';
+
+        if (nilai >= 80) {
+            idx = 'A';
+        } else if (nilai >= 60) {
+            idx = 'B';
+        } else if (nilai >= 40) {
+            idx = 'B';
+        } else if (nilai >= 20) {
+            idx = 'D';
+        } else {
+            idx = 'E';
+        }
 
         return idx;
     }
 
-    void hitungNilai(int a1, int a2, int a3, int tugas, int prakt){
-        this.nilai = (0.15*a1) + (0.15*a2) + (0.1*a3) + (0.2*tugas) + (0.4*prakt);
+    void hitungNilai(int a1, int a2, int a3, int tugas, int prakt) {
+        this.nilai = (0.15 * a1) + (0.15 * a2) + (0.1 * a3) + (0.2 * tugas) + (0.4 * prakt);
         this.index = cekIndeks(this.nilai);
     }
 
-    void inputData(){
+    void inputData() {
         System.out.println("Nilai Algoritma dan Pemrograman");
         System.out.print("NIM : ");
         this.nim = inp.next();
@@ -59,7 +59,7 @@ class NilaiMK{
         hitungNilai(this.a1, this.a2, this.a3, this.tugas, this.prakt);
     }
 
-    void viewNilai(){
+    void viewNilai() {
         System.out.println("\n\n\nNilai Assessment");
         System.out.println("NIM : " + this.nim);
         System.out.println("Assessment 1 : " + this.a1);
