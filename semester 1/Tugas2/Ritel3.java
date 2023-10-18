@@ -2,14 +2,13 @@ package Tugas2;
 
 import java.util.Scanner;
 
-public class Ritel3 {
+class Ritel3{
     public static void main(String[] args) {
-        Barang brg = new Barang();
+        Ritel3 brg = new Ritel3();
         brg.inputData();
         brg.viewData();
     }  
-}
-class Barang{
+    
     String kode;
     String nama;
     String produsen;

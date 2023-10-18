@@ -181,6 +181,7 @@ public class BankAPK {
         System.out.println("\n==============================\n");
         System.out.print("Tekan ENTER untuk menyimpan");
         String temp = input.readLine();
+        System.out.println(temp);
 
         setAwal();
             
