@@ -28,7 +28,7 @@ public class TA1 {
         }
     }
 
-    void cls() {
+    void cls(){
         try {
             new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
         } catch (Exception e) {
