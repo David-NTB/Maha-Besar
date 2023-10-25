@@ -14,6 +14,13 @@ public class PecahUang {
         int uangIn = input.nextInt();
         input.close();
 
+        cekPecahan(uangIn);
+
+        System.out.println("\n==============================\n");
+        
+    }
+
+    private static void cekPecahan(int uangIn){
         int lembar = 0;
         int[] pecah = {100000, 50000, 20000, 10000, 5000, 2000, 1000, 500, 200, 100};
         boolean next = false;
@@ -30,7 +37,5 @@ public class PecahUang {
             }
             i++;
         }
-        System.out.println("\n==============================\n");
-        
     }
 }
