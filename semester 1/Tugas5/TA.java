@@ -19,36 +19,31 @@ public class TA {
 
         boolean next = false;
         int i = 0;
-        double[] tarif = { 0, 5, 15, 25, 30, 35 };
-        int[] wajibPajak = { 0, 60, 190, 250, 4500, income };
-        double[] kuartil = { 0, 0, 0, 0, 0, 0 };
+        double[] tarif = { 5, 15, 25, 30, 35 };
+        int[] wajibPajak = { 60, 190, 250, 4500, income };
+        double[] kuartil = { 0, 0, 0, 0, 0 };
 
-        while (!next) {
+            while (!next) {
 
-            if (income >= wajibPajak[i]) {
-                income -= wajibPajak[i];
-                kuartil[i] = wajibPajak[i] * (tarif[i] / 100);
-                System.out.println("kuartil " + (i + 1) + "(jt)\t: " + kuartil[i]);
-                pajakTotal += kuartil[i];
-                i++;
+                if (income >= wajibPajak[i]) {
+                    income -= wajibPajak[i];
+                    kuartil[i] = wajibPajak[i] * (tarif[i] / 100);
+                    System.out.println("kuartil " + (i + 1) + "(jt)\t: " + kuartil[i]);
+                    pajakTotal += kuartil[i];
+                    i++;
 
-            } else if (income > 0) {
-                kuartil[i] = income * (tarif[i] / 100);
-                income = 0;
-                System.out.println("kuartil " + (i + 1) + "(jt)\t: " + kuartil[i]);
-                pajakTotal += kuartil[i];
+                } else if (income > 0) {
+                    kuartil[i] = income * (tarif[i] / 100);
+                    income = 0;
+                    System.out.println("kuartil " + (i + 1) + "(jt)\t: " + kuartil[i]);
+                    pajakTotal += kuartil[i];
 
-            } else {
-                next = true;
+                } else {
+                    next = true;
+                }
             }
 
-        }
-
-        int hasil = (int) pajakTotal;
-
-        System.out.println("\nTotal pajak(jt)\t: " + hasil);
-        System.out.println("\n==============================\n");
-
+            System.out.println("\nTotal pajak(jt)\t: " + pajakTotal);
+            System.out.println("\n==============================\n");
     }
-
 }
