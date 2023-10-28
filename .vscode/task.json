@@ -1,0 +1,19 @@
+{
+    "version":"1.0.0",
+    "task":[
+        {
+            "label" : "run java main",
+            "type" : "shell",
+            "command" : "java",
+            "args":[
+                "-cp",
+                "./bin",
+                "src.semester 1"
+            ],
+            "group":{
+                "kind": "build",
+                "isDefaulr": true
+            }
+        }
+    ]
+}
