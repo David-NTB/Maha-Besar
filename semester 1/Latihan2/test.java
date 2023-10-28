@@ -91,13 +91,12 @@ public class test {
         System.out.println("Bulan: " + bln);
         System.out.println("Tahun: " + thn);
         
-        
+        in.close();
     }
 
     private static void nama(int a, int tahun, int tanggal){
         Calendar kalender = Calendar.getInstance();
 
-        
     }
 
     
