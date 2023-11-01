@@ -8,7 +8,7 @@
             "args":[
                 "-cp",
                 "./bin",
-                "src.semester 1"
+                "src.semester1.TA"
             ],
             "group":{
                 "kind": "build",
