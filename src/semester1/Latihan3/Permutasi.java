@@ -2,7 +2,7 @@ package semester1.Latihan3;
 
 import java.util.Scanner;
 
-public class Permutasi extends Faktorial{
+public class Permutasi{
     Faktorial faktorial = new Faktorial();
 
     public void operasi1() {
@@ -29,6 +29,7 @@ public class Permutasi extends Faktorial{
         System.out.println("==============================");
     }
     
+    //menghitung rumus permutasi
     public int mutasi(int in1, int in2){
         int hasil;
         return hasil = (faktorial.faktor(in1)) / (faktorial.faktor((in1-in2)));

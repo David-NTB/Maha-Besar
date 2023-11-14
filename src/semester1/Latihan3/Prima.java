@@ -2,7 +2,7 @@ package semester1.Latihan3;
 
 import java.util.Scanner;
 
-public class Prima extends Main{
+public class Prima {
 
     public void operasi() {
         //instansiasi Scanner

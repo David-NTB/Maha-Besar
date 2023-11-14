@@ -13,6 +13,8 @@ public class Main {
         Budi budiani = new Budi();
 
         // menu
+        String next;
+        do{
         cls();
         System.out.println("==============================");
         System.out.println("MEMILIH MENU");
@@ -24,9 +26,12 @@ public class Main {
         System.out.println("5. Budi dan Ani");
         System.out.println("==============================");
 
+        //input pilihan
         System.out.print("\nSilahkan pilih menu : ");
         int pilih = input.nextInt();
+        input.nextLine();
 
+        //percabangan
         switch (pilih) {
             case 1:
                 cls();
@@ -58,8 +63,13 @@ public class Main {
                 break;
         }
 
+        //is Lanjut?
+        System.out.print("Lanjut?(y/n) : ");
+        next = input.nextLine();
+    } while(next.equals("y"));
     }
 
+    //untuk clear layar
     public static void cls(){
         try {
             new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();

@@ -2,7 +2,7 @@ package semester1.Latihan3;
 
 import java.util.Scanner;
 
-public class Biner extends Main{
+public class Biner{
 
     public void operasi() {
         //instansiasi Scanner

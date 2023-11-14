@@ -28,12 +28,16 @@ public class Budi {
         budi = budi * 1000 / 3600;
         ani = ani * 1000 / 3600;
 
+        //jarak tempuh
         double budiJalan = 0;
         double aniJalan = 0;
 
         int waktu = 0;
         while (0 < jarak) {
+            //menghitung jarak budi-ani
             jarak -= (budi + ani);
+
+            //menghitung jarak tempuh
             budiJalan += budi;
             aniJalan += ani;
 
@@ -42,15 +46,15 @@ public class Budi {
                 break;
             }
 
+            //menambah waktu 1 detik
             waktu++;
-
         }
 
+        //menampilkan ke layar
         System.out.println("\n==================================================\n");
         System.out.println("Budi dan Ani akan berpapasan di detik ke-" + waktu);
         System.out.println("Budi harus berjalan sejauh : " + budiJalan + " meter");
         System.out.println("Ani harus berjalan sejauh : " + aniJalan + " meter");
-
         System.out.println("\n==================================================");
     }
 

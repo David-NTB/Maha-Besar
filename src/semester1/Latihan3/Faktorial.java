@@ -2,7 +2,7 @@ package semester1.Latihan3;
 
 import java.util.Scanner;
 
-public class Faktorial extends Main{
+public class Faktorial{
     
     public void operasi(){
         //instansiasi Scanner
@@ -26,6 +26,7 @@ public class Faktorial extends Main{
         System.out.println("==============================");
     }
     
+    //menghitung faktorial
     public int faktor(int in){
         int hasil = 1;
         for(int i = in; i > 0; i--) {
