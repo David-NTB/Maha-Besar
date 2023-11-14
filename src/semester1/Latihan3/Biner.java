@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 class Biner{
     public static void main(String[] args) {
+        //instansiasi Scanner
         Scanner input = new Scanner(System.in);
 
         //menu
@@ -12,7 +13,7 @@ class Biner{
         System.out.println("==============================");
 
         //user input
-        System.out.print("Ubah biner : ");
+        System.out.print("Masukkan input : ");
         int in = input.nextInt();
         input.close();
 

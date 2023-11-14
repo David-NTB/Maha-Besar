@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class Prima {
     public static void main(String[] args) {
+        //instansiasi Scanner
         Scanner input = new Scanner(System.in);
 
         //menu
