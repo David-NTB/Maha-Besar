@@ -10,6 +10,7 @@ public class Main {
         Prima prima = new Prima();
         Faktorial faktorial = new Faktorial();
         Permutasi permutasi = new Permutasi();
+        Budi budiani = new Budi();
 
         // menu
         cls();
@@ -20,6 +21,7 @@ public class Main {
         System.out.println("2. Prima");
         System.out.println("3. Faktorial");
         System.out.println("4. Permutasi");
+        System.out.println("5. Budi dan Ani");
         System.out.println("==============================");
 
         System.out.print("\nSilahkan pilih menu : ");
@@ -44,6 +46,11 @@ public class Main {
             case 4:
                 cls();
                 permutasi.operasi1();
+                break;
+
+            case 5:
+                cls();
+                budiani.ketemu();
                 break;
 
             default:
