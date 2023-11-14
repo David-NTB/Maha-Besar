@@ -19,9 +19,8 @@ public class Faktorial {
     
         int hasil = 1;
         //menghitung faktorial
-        for(int i = in; i > 0; i--){
-            hasil *= i;
-        }
+        for(int i = in; i > 0; i--) hasil *= i;
+        
 
         //menampilkan ke layar
         System.out.println("Hasil : " + hasil);
