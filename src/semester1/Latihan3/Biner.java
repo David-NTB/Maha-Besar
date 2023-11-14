@@ -2,11 +2,12 @@ package semester1.Latihan3;
 
 import java.util.Scanner;
 
-class Biner{
-    public static void main(String[] args) {
+public class Biner extends Main{
+
+    public void operasi() {
         //instansiasi Scanner
         Scanner input = new Scanner(System.in);
-
+        
         //menu
         System.out.println("==============================");
         System.out.println("KONVERSI BILANGAN KE BINER");
@@ -15,7 +16,6 @@ class Biner{
         //user input
         System.out.print("Masukkan input : ");
         int in = input.nextInt();
-        input.close();
 
         //cek panjang biner
         int index = 0;
@@ -38,4 +38,5 @@ class Biner{
 
         System.out.println("\n==============================");
     }
+
 }

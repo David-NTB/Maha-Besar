@@ -2,11 +2,12 @@ package semester1.Latihan3;
 
 import java.util.Scanner;
 
-public class Prima {
-    public static void main(String[] args) {
+public class Prima extends Main{
+
+    public void operasi() {
         //instansiasi Scanner
         Scanner input = new Scanner(System.in);
-
+        
         //menu
         System.out.println("==============================");
         System.out.println("MENGECEK BILANGAN PRIMA");
@@ -15,7 +16,7 @@ public class Prima {
         //user input
         System.out.print("Masukkan input : ");
         int in = input.nextInt();
-        input.close();
+
         
         //membuat variabel pengecekan
         int sisa = 1;
