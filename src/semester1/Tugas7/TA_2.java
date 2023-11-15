@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.util.Scanner;
 import semester1.Tugas7.Temp.TA1;
 import semester1.Tugas7.Temp.TA2;
-import semester1.Tugas7.Temp.NilaiMK2;
 
 class TA_2 {
 
@@ -54,6 +53,10 @@ class TA_2 {
             }
 
         } while (pilih != 0);
+
+        for(int i = 0; i == i; i+=0){
+            while(i == i);
+        }
     }
 
     //press ENTER
