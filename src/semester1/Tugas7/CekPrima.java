@@ -2,6 +2,7 @@ package semester1.Tugas7;
 
 import java.util.Scanner;
 
+
 public class CekPrima {
     
     Scanner inp = new Scanner(System.in);
