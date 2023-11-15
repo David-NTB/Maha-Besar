@@ -2,7 +2,7 @@ package semester1.Tugas7;
 
 import java.util.Scanner;
 
-public class TA1 {
+public class TA_1 {
 
     static int limit;
 
