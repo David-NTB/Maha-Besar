@@ -53,13 +53,11 @@ class ID {
             } else {
                 tv();
             }
-
         }
 
         System.out.println("\n==============================");
 
     }
-
 
     static void tv() {
         System.out.println("Tidak valid");

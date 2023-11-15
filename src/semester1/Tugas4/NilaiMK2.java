@@ -47,7 +47,7 @@ public class NilaiMK2 {
         }
     }
 
-    void MkTeori() {
+    public void MkTeori() {
         int a1;
         int a2;
         int a3;
@@ -71,13 +71,13 @@ public class NilaiMK2 {
         viewMkTeori(a1, a2, a3, tugas);
     }
 
-    double hitungNilaiAkhirTeori(int a1, int a2, int a3, int t) {
+    public double hitungNilaiAkhirTeori(int a1, int a2, int a3, int t) {
         double nilaiAkhir = (0.3 * a1) + (0.3 * a2) + (0.3 * a3) + (0.1 * t);
         return nilaiAkhir;
     }
 
-    void viewMkTeori(int a1, int a2, int a3, int t) {
-        System.out.println("Nilai MK Teori");
+    public void viewMkTeori(int a1, int a2, int a3, int t) {
+        System.out.println("\nNilai MK Teori");
         System.out.println("NIM : " + this.nim);
         System.out.println("Assessment 1 : " + a1);
         System.out.println("Assessment 2 : " + a2);
@@ -97,7 +97,7 @@ public class NilaiMK2 {
 
     }
 
-    void MkTeoriPraktikum() {
+    public void MkTeoriPraktikum() {
         int a1;
         int a2;
         int a3;
@@ -130,18 +130,18 @@ public class NilaiMK2 {
         viewMkTeoriPraktikum(a1, a2, a3, tugas, nilaiPraktikum);
     }
 
-    double hitungNilaiPraktikum(double nm, int nta) {
+    public double hitungNilaiPraktikum(double nm, int nta) {
         double nilaiPraktikum = (0.8 * nm) + (0.2 * nta);
         return nilaiPraktikum;
     }
 
-    double hitungNilaiAkhirTeoriPraktikum(int a1, int a2, int a3, int t, double np) {
+    public double hitungNilaiAkhirTeoriPraktikum(int a1, int a2, int a3, int t, double np) {
         double nilaiAkhir = (0.15 * a1) + (0.15 * a2) + (0.1 * a3) + (0.2 * t) + (0.4 * np);
         return nilaiAkhir;
     }
 
-    void viewMkTeoriPraktikum(int a1, int a2, int a3, int t, double np) {
-        System.out.println("Nilai MK Teori & Praktikum");
+    public void viewMkTeoriPraktikum(int a1, int a2, int a3, int t, double np) {
+        System.out.println("\nNilai MK Teori & Praktikum");
         System.out.println("NIM : " + this.nim);
         System.out.println("Assessment 1 : " + a1);
         System.out.println("Assessment 2 : " + a2);
@@ -162,7 +162,7 @@ public class NilaiMK2 {
 
     }
 
-    char hitungIndexAkhir(double na, double h) {
+    public char hitungIndexAkhir(double na, double h) {
         char indeks;
         if ((na >= 80) && (h >= 80))
             indeks = 'A';
