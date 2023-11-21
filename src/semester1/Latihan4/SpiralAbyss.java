@@ -15,27 +15,28 @@ class SpiralAbyss {
 
         System.out.println("\n");
 
-        //Process
-        
+        // Process
+
         String[][] spiral = new String[size][size];
 
-        //isi array dengan spasi
+        // isi array dengan spasi
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++)
                 spiral[i][j] = "  ";
         }
 
         // membuat array
-        kurukuru(spiral, size); 
+        kurukuru(spiral, size);
 
         // print array
-        printArray(spiral, size); 
+        printArray(spiral, size);
     }
 
-    static void kurukuru(String[][] array, int size){
+    static void kurukuru(String[][] array, int size) {
         int bound = size;
         int x = 0;
         int y = 0;
+
         for (int r = 1; r <= size; r++) {
             // atas
             for (int i = 0; i < bound; i++) {
@@ -71,7 +72,7 @@ class SpiralAbyss {
         }
     }
 
-    static void printArray(String[][] array, int size){
+    static void printArray(String[][] array, int size) {
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++)
                 System.out.print(array[j][i]);
