@@ -1,13 +1,18 @@
 package semester1.Latihan4;
 
+import java.util.Scanner;
+
 class CetakNumber {
     public static void main(String[] args) {
+        Scanner userInput = new Scanner(System.in);
     
         System.out.println("==============================");
-        System.out.println("NIM = 1201230011");
+        System.out.println("CETAK ANGKA");
         System.out.println("==============================");
 
-        String NIM = "1201230011";
+        System.out.print("Masukkan angka : ");
+        String NIM = userInput.nextLine();
+        
         for(int i = 0; i < NIM.length(); i++) {
             char angka = NIM.charAt(i);
             pilihan(angka);
@@ -32,6 +37,10 @@ class CetakNumber {
         
             case '4':
                 papat();
+                break;
+        
+            case '5':
+                limo();
                 break;
         
             case '6':
