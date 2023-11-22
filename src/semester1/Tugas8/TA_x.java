@@ -2,7 +2,7 @@ package semester1.Tugas8;
 
 import java.util.Scanner;
 
-public class x {
+public class TA_x {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
