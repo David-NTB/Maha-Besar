@@ -7,6 +7,7 @@ public class segitiga {
         Scanner input = new Scanner(System.in);
         System.out.print("Masukkan ukuran : ");
         int tinggi = input.nextInt();
+        input.close();
         System.out.println();
         
         

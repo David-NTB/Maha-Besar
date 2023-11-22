@@ -8,18 +8,21 @@ public class x {
 
         System.out.print("Masukkan ukuran : ");
         int size = input.nextInt();
+        input.close();
 
         System.out.println("\n");
         
-        //Looping
+        //Looping FOR
         System.out.println("X Pake FOR");
         xPakeFor(size);
         System.out.println("\n");
         
+        //Looping WHILE
         System.out.println("X Pake WHILE");
         xPakeWhile(size);
         System.out.println("\n");
         
+        //Looping DO WHILE
         System.out.println("X Pake DO WHILE");
         xPakeDoWhile(size);
         System.out.println("\n");
