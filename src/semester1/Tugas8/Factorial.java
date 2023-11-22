@@ -7,71 +7,80 @@ public class Factorial {
         Scanner input = new Scanner(System.in);
 
         System.out.print("Masukkan angka : ");
-        int size = input.nextInt();
+        int angka = input.nextInt();
         input.close();
 
         System.out.println("\n");
-        
+
         //Looping FOR
         System.out.println("X Pake FOR");
-        faktorFor(size);
+        sigmaFor(angka);
         System.out.println("\n");
         
         //Looping WHILE
         System.out.println("X Pake WHILE");
-        faktorWhile(size);
+        sigmaWhile(angka);
         System.out.println("\n");
         
         //Looping DO WHILE
         System.out.println("X Pake DO WHILE");
-        faktorDoWhile(size);
+        sigmaDoWhile(angka);
         System.out.println("\n");
-    }
 
-    static void faktorFor(int input) {
-        int sum = 1;
-
-        System.out.print(input + "! = ");
-        for (int i = input; i > 0; i--) {
-            sum *= i;
-            System.out.print(i);
-
-            if (i != 1) {
-                System.out.print(" x ");
-            }
-        }
-        System.out.println(" = " + sum);
     }
     
-    static void faktorWhile(int input) {
-        int sum = 1;
+    static void sigmaFor(int angka) {
+        int sigma = 0;
 
-        System.out.print(input + "! = ");
-        while (input > 0) {
-            sum *= input;
-            System.out.print(input);
-
-            if (input != 1) {
-                System.out.print(" x ");
+        for(int i = angka; i > 0; i--) {
+            sigma += faktor(i);
+            System.out.print(faktor(i));
+            
+            if(i != 1){
+                System.out.print(" + ");
             }
-            input--;
         }
-        System.out.println(" = " + sum);
+        
+        System.out.print("\nSigma : " + sigma);
     }
-    
-    static void faktorDoWhile(int input) {
-        int sum = 1;
 
-        System.out.print(input + "! = ");
+    static void sigmaWhile(int angka) {
+        int sigma = 0;
+
+        while(angka > 0) {
+            sigma += faktor(angka);
+            System.out.print(faktor(angka));
+            
+            if(angka != 1){
+                System.out.print(" + ");
+            }
+            angka--;
+        }
+        
+        System.out.print("\nSigma : " + sigma);
+    }
+
+    static void sigmaDoWhile(int angka) {
+        int sigma = 0;
+
         do {
-            sum *= input;
-            System.out.print(input);
-
-            if (input != 1) {
-                System.out.print(" x ");
+            sigma += faktor(angka);
+            System.out.print(faktor(angka));
+            
+            if(angka != 1){
+                System.out.print(" + ");
             }
-            input--;
-        }while (input > 0);
-        System.out.println(" = " + sum);
+            angka--;
+        } while(angka > 0);
+        
+        System.out.print("\nSigma : " + sigma);
+    }
+
+    static int faktor(int in){
+        int hasil = 1;
+        for(int i = in; i > 0; i--) {
+            hasil *= i;    
+        }
+        return hasil;
     }
 }
