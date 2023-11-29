@@ -87,7 +87,7 @@ public class TA2 {
             if (cek(this.ass1) && cek(this.ass2) && cek(this.ass3) && cek(this.tugas) && cek(this.praktikum))
                 next = false;
             else
-                System.err.println("\nError..!! Rentang nilai harus 0-100");;
+                System.err.println("\nError..!! Rentang nilai harus 0-100");
 
         } while (next);
 

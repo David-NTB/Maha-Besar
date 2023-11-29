@@ -1,10 +1,11 @@
 package semester1.Tugas9;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class TA3 {
 
-    int arr[] = new int[10];
+    ArrayList<Integer> arr = new ArrayList<Integer>(); //
     Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
@@ -17,7 +18,8 @@ public class TA3 {
         System.out.println("Input Data");
         for (int i = 0; i < 10; i++) {
             System.out.print("Nilai " + (i + 1) + " : ");
-            arr[i] = sc.nextInt();
+            arr.add(sc.nextInt()); //
+            
         }
         System.out.println();
     }
@@ -25,7 +27,7 @@ public class TA3 {
     public void viewData() {
         System.out.println("View Data");
         for (int i = 0; i < 10; i++) {
-            System.out.println("Nilai " + (i + 1) + " : " + arr[i]);
+            System.out.println("Nilai " + (i + 1) + " : " + arr.get(i)); //
         }
         System.out.println();
     }
