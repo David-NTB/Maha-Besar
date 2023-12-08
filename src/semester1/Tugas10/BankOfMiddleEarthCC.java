@@ -44,12 +44,14 @@ public class BankOfMiddleEarthCC {
     private void menu() {
         int pilihan;
         do {
+            System.out.println();
             System.out.println("1. Buat Rekening");
             System.out.println("2. Tabung");
             System.out.println("3. Tarik");
             System.out.println("4. Transfer");
             System.out.println("5. Info Rekening");
             System.out.println("0. Keluar");
+            System.out.println();
             System.out.print("Pilihan: ");
             pilihan = input.nextInt();
             input.nextLine();
@@ -76,6 +78,7 @@ public class BankOfMiddleEarthCC {
                     System.out.println("Keluar dari program.");
                     break;
                 default:
+                    System.out.println();
                     System.out.println("Pilihan tidak valid.");
             }
         } while (pilihan != 0);
@@ -149,7 +152,7 @@ public class BankOfMiddleEarthCC {
         if (pos >= 0) {
             // cek apakah saldo akhir masih cukup atau tidak
             double saldoAkhir = aRek.get(pos).getSaldo() - jumlah;
-            if (saldoAkhir < saldoMinimal) { // No 16
+            if (saldoAkhir > saldoMinimal) { // No 16
                 aRek.get(pos).setSaldo(saldoAkhir); // No 17
                 System.out.println("Transaksi Selesai");
             } else {
@@ -175,7 +178,7 @@ public class BankOfMiddleEarthCC {
             if (saldoAkhirAsal >= saldoMinimal) {
                 aRek.get(posAsal).setSaldo(saldoAkhirAsal); // No 20
                 double SaldoAkhirTujuan = aRek.get(posTujuan).getSaldo() + jumlah; // No 21
-                aRek.get(posTujuan).setSaldo(saldoAkhirAsal); // No 22
+                aRek.get(posTujuan).setSaldo(SaldoAkhirTujuan); // No 22
                 System.out.println("Transfer telah dilaksanakan");
             } else {
                 System.out.println("Saldo tidak cukup, Transaksi dibatalkan");
