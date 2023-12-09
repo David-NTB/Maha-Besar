@@ -95,7 +95,7 @@ public class BankOfMiddleEarthCC {
         } else {
             int no;
             if (!aRek.isEmpty()) {
-                no = aRek.get(aRek.size() - 1).getNo() + 1;
+                no = aRek.get(aRek.size()    - 1).getNo() + 1;
                 // jika array sudah terisi, maka no rekening diambilkan dari
                 // rekening terakhir yang ditambahkan, kemudian ditambahkan 1
             } else {
