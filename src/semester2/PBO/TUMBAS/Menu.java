@@ -1,6 +1,10 @@
 package semester2.PBO.TUMBAS;
 
+import java.util.ArrayList;
+
 public class Menu {
+    DataManager database = new DataManager("src\\semester2\\PBO\\TUMBAS\\database.txt");
+
     public void header() {
         Util.cls();
         System.out.println("================================================");
@@ -10,6 +14,7 @@ public class Menu {
 
     // MAIN_MENU
     public void mainMenu() {
+        ArrayList<Kelompok> kelompok = new ArrayList<>();
         boolean loop = true;
         while (loop) {
             header();
@@ -47,7 +52,12 @@ public class Menu {
     }
 
     public void showAllNilai() {
-
+        header();
+        ArrayList<Kelompok> loadKelompok = database.loadAllData();
+        for (Kelompok kelompok : loadKelompok) {
+            System.out.println(kelompok);
+        }
+        Util.pressEnter();
     }
 
     // MENU_KELOMPOK
@@ -66,17 +76,14 @@ public class Menu {
             switch (key) {
                 case 1:
                     cariKelompok();
-                    ;
                     break;
 
                 case 2:
                     tambahKelompok();
-                    ;
                     break;
 
                 case 3:
                     hapusKelompok();
-                    ;
                     break;
 
                 case 0:
@@ -148,21 +155,21 @@ public class Menu {
             System.out.println("1. Input Nilai");
             System.out.println("2. Tampulkan Nilai");
             System.out.println("0. Kembali");
-            
+
             System.out.print("\nPilihan : ");
             int key = Util.inputInt();
 
             switch (key) {
                 case 1:
-                    
+
                     break;
 
                 case 2:
-                    
+
                     break;
 
                 case 3:
-                    
+
                     break;
 
                 case 0:

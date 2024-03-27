@@ -13,6 +13,11 @@ public class Lomba {
         this.nilai4 = nilai4;
     }
 
+    @Override
+    public String toString() {
+        return nilai1 + ", " + nilai2 + ", " + nilai3 + ", " + nilai4;
+    }
+
     public int getNilai1() {
         return nilai1;
     }
