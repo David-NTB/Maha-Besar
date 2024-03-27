@@ -1,4 +1,4 @@
-package semester2.PBO.TugasXX;
+package semester2.PBO;
 
 import java.util.ArrayList;
 
