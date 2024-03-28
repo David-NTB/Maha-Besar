@@ -3,8 +3,12 @@ package semester2.PBO.TUMBAS;
 import java.util.ArrayList;
 
 public class Menu {
-    private final DataManager database = new DataManager("src\\semester2\\PBO\\TUMBAS\\database.txt");
-    private final ArrayList<Kelompok> kelompok = database.loadAllData();
+    private DataManager database = new DataManager();
+    private ArrayList<Kelompok> listKelompok = new ArrayList<>();
+
+    Menu() {
+        listKelompok = database.loadData();
+    }
 
     public void header() {
         Util.cls();
@@ -53,13 +57,12 @@ public class Menu {
 
     public void showAllNilai() {
         header();
-        ArrayList<Kelompok> loadKelompok = database.loadAllData();
-        for (Kelompok kelompok : loadKelompok) {
+        for (Kelompok kelompok : listKelompok) {
             System.out.println(kelompok);
         }
         Util.pressEnter();
     }
-
+    
     // MENU_KELOMPOK
     public void menuKelompok() {
         boolean loop = true;
@@ -99,15 +102,24 @@ public class Menu {
     }
 
     public void cariKelompok() {
-
+        header();
+        System.out.print("Masukkan nama kelompok : ");
+        String nama = Util.inputLine();
+        for (Kelompok kelompok : listKelompok) {
+            if(nama.equals(kelompok.getNama())){
+                System.out.println(kelompok);
+                break;
+            }
+        }
+        Util.pressEnter();
     }
 
     public void tambahKelompok() {
         header();
         System.out.print("Masukkan nama kelompok : ");
         String nama = Util.inputLine();
-        kelompok.add(new Kelompok(nama, null));
-        database.saveData(kelompok);
+        listKelompok.add(new Kelompok(nama, new Lomba(0, 0, 0, 0)));
+        database.saveData(listKelompok);
     }
 
     public void hapusKelompok() {

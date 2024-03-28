@@ -11,7 +11,10 @@ public class Kelompok {
 
     @Override
     public String toString() {
-        return "\nNama: " + nama + ", \nJenis lomba: " + nilai.getClass().getName() + "\nNilai: " + nilai.getHasil() + "\nDetail: " + nilai.toString();
+        if(nilai.getClass().getName().equals("semester2.PBO.TUMBAS.Lomba")) {
+            return "\nNama: " + nama + "\nJenis lomba: Belum memilih lomba" + "\nNilai: " + nilai.getHasil() + "\nDetail: " + nilai.toString();
+        }
+        return "\nNama: " + nama + "\nJenis lomba: " + nilai.getClass().getName() + "\nNilai: " + nilai.getHasil() + "\nDetail: " + nilai.toString();
     }
 
     public String toDatabaseString() {
