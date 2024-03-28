@@ -10,13 +10,13 @@ import java.util.ArrayList;
 public class DataManager {
     private static final String FILENAME = "src\\semester2\\PBO\\TUMBAS\\database.txt";
 
-    public void saveData(ArrayList<Kelompok> kelompok) {
+    // AKSES_KE_DATABASE
+    public void saveData(ArrayList<Kelompok> listKelompok) {
         try (PrintWriter writer = new PrintWriter(new FileWriter(FILENAME))) {
-            for (Kelompok nilai : kelompok) {
+            for (Kelompok nilai : listKelompok) {
                 writer.println(nilai.toDatabaseString());
             }
-            System.out.println("Data disimpan");
-            Util.pressEnter();
+            System.out.println("\nData diperbarui");
         } catch (IOException e) {
             System.err.println("Error : saveData()");
             e.printStackTrace();
@@ -65,5 +65,43 @@ public class DataManager {
             e.printStackTrace();
         }
         return listKelompok;
+    }
+
+    // OPERASI_DATA_KELOMPOK
+    public Kelompok getKelompok(ArrayList<Kelompok> listKelompok) {
+        System.out.print("Masukkan nama kelompok : ");
+        String nama = Util.inputLine();
+        for (Kelompok kelompok : listKelompok) {
+            if (nama.equals(kelompok.getNama())) {
+                return kelompok;
+            }
+        }
+        return null;
+    }
+
+    public void addData(ArrayList<Kelompok> listKelompok) {
+        System.out.print("Masukkan nama kelompok : ");
+        String nama = Util.inputLine();
+        listKelompok.add(new Kelompok(nama, new Lomba(0, 0, 0, 0)));
+        saveData(listKelompok);
+    }
+
+    public void deleteData(ArrayList<Kelompok> listKelompok) {
+        Kelompok kelompok = getKelompok(listKelompok);
+        if (kelompok != null) {
+            listKelompok.remove(kelompok);
+            saveData(listKelompok);
+        } else {
+            System.out.println("\nData tidak ditemukan");
+        }
+    }
+
+    public void searchKelompok(ArrayList<Kelompok> listKelompok) {
+        Kelompok kelompok = getKelompok(listKelompok);
+        if (kelompok != null) {
+            System.out.println(kelompok);
+        } else {
+            System.out.println("\nData tidak ditemukan");
+        }
     }
 }

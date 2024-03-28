@@ -103,27 +103,20 @@ public class Menu {
 
     public void cariKelompok() {
         header();
-        System.out.print("Masukkan nama kelompok : ");
-        String nama = Util.inputLine();
-        for (Kelompok kelompok : listKelompok) {
-            if(nama.equals(kelompok.getNama())){
-                System.out.println(kelompok);
-                break;
-            }
-        }
+        database.searchKelompok(listKelompok);
         Util.pressEnter();
     }
-
+    
     public void tambahKelompok() {
         header();
-        System.out.print("Masukkan nama kelompok : ");
-        String nama = Util.inputLine();
-        listKelompok.add(new Kelompok(nama, new Lomba(0, 0, 0, 0)));
-        database.saveData(listKelompok);
+        database.addData(listKelompok);
+        Util.pressEnter();
     }
-
+    
     public void hapusKelompok() {
-
+        header();
+        database.deleteData(listKelompok);
+        Util.pressEnter();
     }
 
     // MENU_LOMBA
