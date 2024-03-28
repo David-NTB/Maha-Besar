@@ -41,25 +41,12 @@ public class Lomba {
 
 class UIUX extends Lomba{
     int n1, n2, n3, n4;
-
     public UIUX(int n1, int n2, int n3, int n4) {
         super(n1, n2, n3, n4);
-    }
-
-    @Override
-    public double getHasil() {
-        return super.getHasil();
-    }
-
-    @Override
-    public String toString() {
-        return n1 + ", " + n2 + ", " + n3 + ", " + n4;
     }
 }
 
 class Algo extends Lomba{
-    int n1, n2, n3;
-
     public Algo(int n1, int n2, int n3) {
         super(n1, n2, n3, 0);
     }
@@ -68,10 +55,10 @@ class Algo extends Lomba{
     public double getHasil() {
         return ((getNilai1() + getNilai2() + getNilai3() + getNilai3()) / 3);
     }
-    
+
     @Override
     public String toString() {
-        return n1 + ", " + n2 + ", " + n3;
+        return nilai1 + ", " + nilai2 + ", " + nilai3;
     }
 }
 
@@ -89,6 +76,6 @@ class Data extends Lomba{
 
     @Override
     public String toString() {
-        return n1 + ", " + n2 + ", " + n3;
+        return nilai1 + ", " + nilai2 + ", " + nilai3;
     }
 }

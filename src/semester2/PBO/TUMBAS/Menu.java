@@ -3,7 +3,8 @@ package semester2.PBO.TUMBAS;
 import java.util.ArrayList;
 
 public class Menu {
-    DataManager database = new DataManager("src\\semester2\\PBO\\TUMBAS\\database.txt");
+    private final DataManager database = new DataManager("src\\semester2\\PBO\\TUMBAS\\database.txt");
+    private final ArrayList<Kelompok> kelompok = database.loadAllData();
 
     public void header() {
         Util.cls();
@@ -14,7 +15,6 @@ public class Menu {
 
     // MAIN_MENU
     public void mainMenu() {
-        ArrayList<Kelompok> kelompok = new ArrayList<>();
         boolean loop = true;
         while (loop) {
             header();
@@ -103,7 +103,11 @@ public class Menu {
     }
 
     public void tambahKelompok() {
-
+        header();
+        System.out.print("Masukkan nama kelompok : ");
+        String nama = Util.inputLine();
+        kelompok.add(new Kelompok(nama, null));
+        database.saveData(kelompok);
     }
 
     public void hapusKelompok() {

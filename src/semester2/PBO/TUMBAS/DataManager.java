@@ -8,7 +8,7 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 
 public class DataManager {
-    private String FILENAME;
+    private final String FILENAME;
 
     public DataManager(String FILENAME) {
         this.FILENAME = FILENAME;
@@ -20,6 +20,7 @@ public class DataManager {
                 writer.println(nilai.toDatabaseString());
             }
             System.out.println("Data disimpan");
+            Util.pressEnter();
         } catch (IOException e) {
             System.err.println("Error : saveData()");
             e.printStackTrace();
@@ -33,17 +34,31 @@ public class DataManager {
             while ((line = reader.readLine()) != null) {
                 // Parsing data dari baris dalam file
                 String[] parts = line.split(", ");
-                String nama = parts[0].substring(6).trim();
-                int n1 = Integer.parseInt(parts[3].substring(8).trim());
+                String nama = parts[0].trim();
+                int n1 = Integer.parseInt(parts[3].trim());
                 int n2 = Integer.parseInt(parts[4].trim());
                 int n3 = Integer.parseInt(parts[5].trim());
                 int n4 = Integer.parseInt(parts[6].trim());
 
-                Object a = parts[1].substring(13).trim();
-                
-                // Membuat objek Kelompok baru dan menambahkannya ke dalam ArrayList
-                Lomba lomba = new a(n1, n2, n3, n4);
-                kelompok.add(new Kelompok(nama, lomba));
+                String jenis = parts[1].trim();
+
+                Lomba lomba;
+                switch (jenis) {
+                    case "UIUX":
+                        lomba = new UIUX(n1, n2, n3, n4);
+                        kelompok.add(new Kelompok(nama, lomba));
+                        break;
+
+                    case "Algo":
+                        lomba = new Algo(n1, n2, n3);
+                        kelompok.add(new Kelompok(nama, lomba));
+                        break;
+
+                    case "Data":
+                        lomba = new Data(n1, n2, n3);
+                        kelompok.add(new Kelompok(nama, lomba));
+                        break;
+                }
             }
         } catch (IOException e) {
             System.err.println("Error : loadAllData()");
@@ -51,6 +66,5 @@ public class DataManager {
         }
         return kelompok;
     }
-
 
 }

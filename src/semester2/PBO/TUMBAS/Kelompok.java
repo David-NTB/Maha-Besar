@@ -11,11 +11,11 @@ public class Kelompok {
 
     @Override
     public String toString() {
-        return "\nNama: " + nama + ", \nJenis lomba: " + nilai.getClass() + "\nNilai: " + nilai.getHasil() + "\nDetail: " + nilai.toString();
+        return "\nNama: " + nama + ", \nJenis lomba: " + nilai.getClass().getName() + "\nNilai: " + nilai.getHasil() + "\nDetail: " + nilai.toString();
     }
 
     public String toDatabaseString() {
-        return "Nama: " + nama + ", \nJenis lomba: " + nilai.getClass() +  " Nilai: " + nilai.getHasil() + ", Detail: " + nilai.toString();
+        return nama + ", " + nilai.getClass().getName() +  ", " + nilai.getHasil() + ", " + nilai.toString();
     }
 
     public String getNama() {
