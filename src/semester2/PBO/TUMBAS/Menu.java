@@ -102,13 +102,13 @@ public class Menu {
 
     public void tambahKelompok() {
         header();
-        database.addData();
+        database.addKelompok();
         Util.pressEnter();
     }
 
     public void hapusKelompok() {
         header();
-        database.deleteData();
+        database.deleteKelompok();
         Util.pressEnter();
     }
 

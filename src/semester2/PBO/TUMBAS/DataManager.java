@@ -75,28 +75,33 @@ public class DataManager {
         System.out.print("Masukkan nama kelompok : ");
         String nama = Util.inputLine().toLowerCase();
         for (Kelompok kelompok : listKelompok) {
-            if (nama.equals(kelompok.getNama().toLowerCase())) {
+            if (kelompok.getNama().toLowerCase().contains(nama)) {
                 return kelompok;
             }
         }
         return null;
     }
 
-    public void addData() {
+    public void addKelompok() {
         ArrayList<Kelompok> listKelompok = loadData();
         System.out.print("Masukkan nama kelompok : ");
         String nama = Util.inputLine();
+        boolean addKelompok = true;
+        
         for (Kelompok kelompok : listKelompok) {
             if (nama.equals(kelompok.getNama())) {
-                listKelompok.add(new Kelompok(nama, new Lomba(0, 0, 0, 0)));
-                saveData(listKelompok);
-            } else {
-                System.out.println("Data kelompok sudah ada");
+                System.out.println("\nData kelompok sudah ada");
+                addKelompok = false;
+                break;
             }
+        }
+        if (addKelompok) {
+            listKelompok.add(new Kelompok(nama, new Lomba(0, 0, 0, 0)));
+            saveData(listKelompok);
         }
     }
 
-    public void deleteData() {
+    public void deleteKelompok() {
         ArrayList<Kelompok> listKelompok = loadData();
         Kelompok kelompok = getKelompok(listKelompok);
         if (kelompok != null) {
