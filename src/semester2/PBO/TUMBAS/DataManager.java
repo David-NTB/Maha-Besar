@@ -145,12 +145,12 @@ public class DataManager {
     public void addNilai(Lomba lomba) {
         ArrayList<Kelompok> listKelompok = loadData();
         Kelompok selectedKelompok = getKelompok(listKelompok);
-        System.out.println("Masukkan nilai : ");
-        System.out.println();
+        lomba = setNilai(selectedKelompok, lomba);
+        
         if (selectedKelompok != null) {
             for (Kelompok kelompok : listKelompok) {
                 if (kelompok.getNama() == selectedKelompok.getNama()) {
-                    if (kelompok.getLomba().getClass().getSimpleName().equals("Lomba")) {
+                    if (kelompok.getLomba().getClass().getSimpleName().equals(lomba.getClass().getSimpleName())) {
                         listKelompok.set(listKelompok.indexOf(kelompok), new Kelompok(selectedKelompok.getNama(), lomba));
                         saveData(listKelompok);
                     } else {
@@ -163,4 +163,18 @@ public class DataManager {
         }
     }
 
+    public Lomba setNilai(Kelompok selectedKelompok, Lomba lomba) {
+        System.out.println("\nMasukkan Nilai :");
+        System.out.print("Nilai 1 : ");
+        lomba.nilai1 = Util.inputInt();
+        System.out.print("Nilai 2 : ");
+        lomba.nilai2 = Util.inputInt();
+        System.out.print("Nilai 3 : ");
+        lomba.nilai3 = Util.inputInt();
+        if (lomba.getClass().getSimpleName().equals("UIUX")) {
+            System.out.println("Nilai 4 : ");
+            lomba.nilai4 = Util.inputInt();
+        }
+        return lomba;
+    }
 }
