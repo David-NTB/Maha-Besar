@@ -11,14 +11,14 @@ public class Kelompok {
 
     @Override
     public String toString() {
-        if(lomba.getClass().getName().equals("semester2.PBO.TUMBAS.Lomba")) {
+        if(lomba.getClass().getSimpleName().equals("Lomba")) {
             return "\nNama: " + nama + "\nJenis lomba: Belum memilih lomba" + "\nNilai: " + lomba.getHasil() + "\nDetail: " + lomba.toString();
         }
-        return "\nNama: " + nama + "\nJenis lomba: " + lomba.getClass().getName() + "\nNilai: " + lomba.getHasil() + "\nDetail: " + lomba.toString();
+        return "\nNama: " + nama + "\nJenis lomba: " + lomba.getClass().getSimpleName() + "\nNilai: " + lomba.getHasil() + "\nDetail: " + lomba.toString();
     }
 
     public String toDatabaseString() {
-        return nama + ", " + lomba.getClass().getName() +  ", " + lomba.getHasil() + ", " + lomba.toString();
+        return nama + ", " + lomba.getClass().getSimpleName() +  ", " + lomba.getHasil() + ", " + lomba.toString();
     }
 
     public String getNama() {

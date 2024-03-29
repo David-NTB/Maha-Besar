@@ -1,7 +1,5 @@
 package semester2.PBO.TUMBAS;
 
-import java.util.ArrayList;
-
 public class Menu {
     private DataManager database = new DataManager();
 
@@ -53,7 +51,6 @@ public class Menu {
     public void showAllNilai() {
         header();
         for (Kelompok kelompok : database.loadData()) {
-
             System.out.println(kelompok);
         }
         Util.pressEnter();

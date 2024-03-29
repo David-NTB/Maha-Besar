@@ -1,7 +1,6 @@
-k1, semester2.PBO.TUMBAS.Lomba, 0.0, 0, 0, 0, 0
-k2, semester2.PBO.TUMBAS.Data, 0.0, 0, 0, 0
-k3, semester2.PBO.TUMBAS.Data, 0.0, 0, 0, 0
-k4, semester2.PBO.TUMBAS.Algo, 0.0, 0, 0, 0
-k5, semester2.PBO.TUMBAS.Algo, 0.0, 0, 0, 0
-k6, semester2.PBO.TUMBAS.UIUX, 0.0, 0, 0, 0, 0
-k7, semester2.PBO.TUMBAS.UIUX, 0.0, 0, 0, 0, 0
+k1, Data, 0.0, 0, 0, 0
+k2, UIUX, 0.0, 0, 0, 0, 0
+k3, Algo, 0.0, 0, 0, 0
+k4, Data, 0.0, 0, 0, 0
+k5, Lomba, 0.0, 0, 0, 0, 0
+k6, Lomba, 0.0, 0, 0, 0, 0

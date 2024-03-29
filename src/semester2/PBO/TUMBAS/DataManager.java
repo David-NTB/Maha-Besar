@@ -42,22 +42,22 @@ public class DataManager {
 
                 Lomba lomba;
                 switch (jenis) {
-                    case "semester2.PBO.TUMBAS.UIUX":
+                    case "UIUX":
                         lomba = new UIUX(n1, n2, n3, n4);
                         listKelompok.add(new Kelompok(nama, lomba));
                         break;
 
-                    case "semester2.PBO.TUMBAS.Algo":
+                    case "Algo":
                         lomba = new Algo(n1, n2, n3);
                         listKelompok.add(new Kelompok(nama, lomba));
                         break;
 
-                    case "semester2.PBO.TUMBAS.Data":
+                    case "Data":
                         lomba = new Data(n1, n2, n3);
                         listKelompok.add(new Kelompok(nama, lomba));
                         break;
 
-                    case "semester2.PBO.TUMBAS.Lomba":
+                    case "Lomba":
                         lomba = new Lomba(n1, n2, n3, n4);
                         listKelompok.add(new Kelompok(nama, lomba));
                         break;
@@ -73,9 +73,9 @@ public class DataManager {
     // OPERASI_DATA_KELOMPOK
     public Kelompok getKelompok(ArrayList<Kelompok> listKelompok) {
         System.out.print("Masukkan nama kelompok : ");
-        String nama = Util.inputLine();
+        String nama = Util.inputLine().toLowerCase();
         for (Kelompok kelompok : listKelompok) {
-            if (nama.equals(kelompok.getNama())) {
+            if (nama.equals(kelompok.getNama().toLowerCase())) {
                 return kelompok;
             }
         }
@@ -128,15 +128,19 @@ public class DataManager {
         Kelompok selectedKelompok = getKelompok(listKelompok);
         if (selectedKelompok != null) {
             for (Kelompok kelompok : listKelompok) {
-                if (kelompok.getLomba().getClass() == selectedKelompok.getLomba().getClass()) {
-                    System.out.println("Lomba sudah dipilih");
-                } else {
-                    listKelompok.set(0, selectedKelompok);
+                if (kelompok.getNama() == selectedKelompok.getNama()) {
+                    if (kelompok.getLomba().getClass().getSimpleName().equals("Lomba")) {
+                        listKelompok.set(listKelompok.indexOf(kelompok), new Kelompok(selectedKelompok.getNama(), lomba));
+                        saveData(listKelompok);
+                    } else {
+                        System.out.println("\n\"" + selectedKelompok.getNama() + "\" sudah memiliki lomba");
+                    }
                 }
             }
         } else {
             System.out.println("\nData tidak ditemukan");
         }
+        
     }
 
 }
