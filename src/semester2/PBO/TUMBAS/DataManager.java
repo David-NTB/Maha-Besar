@@ -33,7 +33,10 @@ public class DataManager {
                 int n1 = Integer.parseInt(parts[3].trim());
                 int n2 = Integer.parseInt(parts[4].trim());
                 int n3 = Integer.parseInt(parts[5].trim());
-                int n4 = Integer.parseInt(parts[6].trim());
+                int n4 = 0;
+                if (parts.length == 7) {
+                    n4 = Integer.parseInt(parts[6].trim());
+                }
 
                 String jenis = parts[1].trim();
 
@@ -79,14 +82,16 @@ public class DataManager {
         return null;
     }
 
-    public void addData(ArrayList<Kelompok> listKelompok) {
+    public void addData() {
+        ArrayList<Kelompok> listKelompok = loadData();
         System.out.print("Masukkan nama kelompok : ");
         String nama = Util.inputLine();
         listKelompok.add(new Kelompok(nama, new Lomba(0, 0, 0, 0)));
         saveData(listKelompok);
     }
 
-    public void deleteData(ArrayList<Kelompok> listKelompok) {
+    public void deleteData() {
+        ArrayList<Kelompok> listKelompok = loadData();
         Kelompok kelompok = getKelompok(listKelompok);
         if (kelompok != null) {
             listKelompok.remove(kelompok);
@@ -96,7 +101,8 @@ public class DataManager {
         }
     }
 
-    public void searchKelompok(ArrayList<Kelompok> listKelompok) {
+    public void searchKelompok() {
+        ArrayList<Kelompok> listKelompok = loadData();
         Kelompok kelompok = getKelompok(listKelompok);
         if (kelompok != null) {
             System.out.println(kelompok);
@@ -112,11 +118,25 @@ public class DataManager {
             String jenisLomba = kelompok.getLomba().getClass().getName();
             if (jenisLomba.equals(lomba.getClass().getName())) {
                 listKelompok.add(kelompok);
-            } else {
-                System.out.println("gagal");
             }
         }
         return listKelompok;
+    }
+
+    public void setLomba(Lomba lomba) {
+        ArrayList<Kelompok> listKelompok = loadData();
+        Kelompok selectedKelompok = getKelompok(listKelompok);
+        if (selectedKelompok != null) {
+            for (Kelompok kelompok : listKelompok) {
+                if (kelompok.getLomba().getClass() == selectedKelompok.getLomba().getClass()) {
+                    System.out.println("Lomba sudah dipilih");
+                } else {
+                    listKelompok.set(0, selectedKelompok);
+                }
+            }
+        } else {
+            System.out.println("\nData tidak ditemukan");
+        }
     }
 
 }

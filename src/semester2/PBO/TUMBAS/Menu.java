@@ -4,11 +4,6 @@ import java.util.ArrayList;
 
 public class Menu {
     private DataManager database = new DataManager();
-    private ArrayList<Kelompok> listKelompok = new ArrayList<>();
-
-    Menu() {
-        listKelompok = database.loadData();
-    }
 
     public void header() {
         Util.cls();
@@ -57,7 +52,8 @@ public class Menu {
 
     public void showAllNilai() {
         header();
-        for (Kelompok kelompok : listKelompok) {
+        for (Kelompok kelompok : database.loadData()) {
+
             System.out.println(kelompok);
         }
         Util.pressEnter();
@@ -103,19 +99,19 @@ public class Menu {
 
     public void cariKelompok() {
         header();
-        database.searchKelompok(listKelompok);
+        database.searchKelompok();
         Util.pressEnter();
     }
 
     public void tambahKelompok() {
         header();
-        database.addData(listKelompok);
+        database.addData();
         Util.pressEnter();
     }
 
     public void hapusKelompok() {
         header();
-        database.deleteData(listKelompok);
+        database.deleteData();
         Util.pressEnter();
     }
 
@@ -196,15 +192,7 @@ public class Menu {
 
     public void daftarLomba(Lomba lomba) {
         header();
-        System.out.print("Masukkan nama kelompok: ");
-        String nama = Util.inputLine();
-        for (Kelompok kelompok : database.getListLomba(lomba)) {
-            if (nama.equals(kelompok.getNama())) {
-                System.out.println(kelompok);
-            } else {
-                System.out.println("Gagal");
-            }
-        }
+        database.setLomba(lomba);
         Util.pressEnter();
     }
 
