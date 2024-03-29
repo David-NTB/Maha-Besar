@@ -86,8 +86,14 @@ public class DataManager {
         ArrayList<Kelompok> listKelompok = loadData();
         System.out.print("Masukkan nama kelompok : ");
         String nama = Util.inputLine();
-        listKelompok.add(new Kelompok(nama, new Lomba(0, 0, 0, 0)));
-        saveData(listKelompok);
+        for (Kelompok kelompok : listKelompok) {
+            if (nama.equals(kelompok.getNama())) {
+                listKelompok.add(new Kelompok(nama, new Lomba(0, 0, 0, 0)));
+                saveData(listKelompok);
+            } else {
+                System.out.println("Data kelompok sudah ada");
+            }
+        }
     }
 
     public void deleteData() {
@@ -126,6 +132,7 @@ public class DataManager {
     public void setLomba(Lomba lomba) {
         ArrayList<Kelompok> listKelompok = loadData();
         Kelompok selectedKelompok = getKelompok(listKelompok);
+
         if (selectedKelompok != null) {
             for (Kelompok kelompok : listKelompok) {
                 if (kelompok.getNama() == selectedKelompok.getNama()) {
