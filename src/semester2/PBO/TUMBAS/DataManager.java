@@ -140,7 +140,27 @@ public class DataManager {
         } else {
             System.out.println("\nData tidak ditemukan");
         }
-        
+    }
+
+    public void addNilai(Lomba lomba) {
+        ArrayList<Kelompok> listKelompok = loadData();
+        Kelompok selectedKelompok = getKelompok(listKelompok);
+        System.out.println("Masukkan nilai : ");
+        System.out.println();
+        if (selectedKelompok != null) {
+            for (Kelompok kelompok : listKelompok) {
+                if (kelompok.getNama() == selectedKelompok.getNama()) {
+                    if (kelompok.getLomba().getClass().getSimpleName().equals("Lomba")) {
+                        listKelompok.set(listKelompok.indexOf(kelompok), new Kelompok(selectedKelompok.getNama(), lomba));
+                        saveData(listKelompok);
+                    } else {
+                        System.out.println("\n\"" + selectedKelompok.getNama() + "\" sudah memiliki lomba");
+                    }
+                }
+            }
+        } else {
+            System.out.println("\nData tidak ditemukan");
+        }
     }
 
 }

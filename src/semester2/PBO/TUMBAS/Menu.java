@@ -168,7 +168,7 @@ public class Menu {
                     break;
 
                 case 2:
-                    inputNilai();
+                    inputNilai(lomba);
                     break;
 
                 case 3:
@@ -193,8 +193,10 @@ public class Menu {
         Util.pressEnter();
     }
 
-    public void inputNilai() {
-
+    public void inputNilai(Lomba lomba) {
+        header();
+        database.addNilai(lomba);
+        Util.pressEnter();
     }
 
     public void showNilai(Lomba lomba) {
