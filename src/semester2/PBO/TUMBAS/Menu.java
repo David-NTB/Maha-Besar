@@ -62,7 +62,7 @@ public class Menu {
         }
         Util.pressEnter();
     }
-    
+
     // MENU_KELOMPOK
     public void menuKelompok() {
         boolean loop = true;
@@ -106,13 +106,13 @@ public class Menu {
         database.searchKelompok(listKelompok);
         Util.pressEnter();
     }
-    
+
     public void tambahKelompok() {
         header();
         database.addData(listKelompok);
         Util.pressEnter();
     }
-    
+
     public void hapusKelompok() {
         header();
         database.deleteData(listKelompok);
@@ -134,15 +134,15 @@ public class Menu {
 
             switch (key) {
                 case 1:
-
+                    subMenuLomba(new UIUX(0, 0, 0, 0));
                     break;
 
                 case 2:
-
+                    subMenuLomba(new Algo(0, 0, 0));
                     break;
 
                 case 3:
-
+                    subMenuLomba(new Data(0, 0, 0));
                     break;
 
                 case 0:
@@ -157,12 +157,13 @@ public class Menu {
         }
     }
 
-    public void subMenuLomba() {
+    public void subMenuLomba(Lomba lomba) {
         boolean loop = true;
         while (loop) {
             header();
-            System.out.println("1. Input Nilai");
-            System.out.println("2. Tampulkan Nilai");
+            System.out.println("1. Daftar Lomba");
+            System.out.println("2. Input Nilai");
+            System.out.println("3. Tampilkan Nilai");
             System.out.println("0. Kembali");
 
             System.out.print("\nPilihan : ");
@@ -170,15 +171,15 @@ public class Menu {
 
             switch (key) {
                 case 1:
-
+                    daftarLomba(lomba);
                     break;
 
                 case 2:
-
+                    inputNilai();
                     break;
 
                 case 3:
-
+                    showNilai(lomba);
                     break;
 
                 case 0:
@@ -193,11 +194,29 @@ public class Menu {
         }
     }
 
+    public void daftarLomba(Lomba lomba) {
+        header();
+        System.out.print("Masukkan nama kelompok: ");
+        String nama = Util.inputLine();
+        for (Kelompok kelompok : database.getListLomba(lomba)) {
+            if (nama.equals(kelompok.getNama())) {
+                System.out.println(kelompok);
+            } else {
+                System.out.println("Gagal");
+            }
+        }
+        Util.pressEnter();
+    }
+
     public void inputNilai() {
 
     }
 
-    public void showNilai() {
-
+    public void showNilai(Lomba lomba) {
+        header();
+        for (Kelompok kelompok : database.getListLomba(lomba)) {
+            System.out.println(kelompok);
+        }
+        Util.pressEnter();
     }
 }

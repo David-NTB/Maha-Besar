@@ -104,4 +104,19 @@ public class DataManager {
             System.out.println("\nData tidak ditemukan");
         }
     }
+
+    // OPERASI_DATA_LOMBA
+    public ArrayList<Kelompok> getListLomba(Lomba lomba) {
+        ArrayList<Kelompok> listKelompok = new ArrayList<>();
+        for (Kelompok kelompok : loadData()) {
+            String jenisLomba = kelompok.getLomba().getClass().getName();
+            if (jenisLomba.equals(lomba.getClass().getName())) {
+                listKelompok.add(kelompok);
+            } else {
+                System.out.println("gagal");
+            }
+        }
+        return listKelompok;
+    }
+
 }
