@@ -39,7 +39,9 @@ public class Util {
             return a;
         } catch (Exception e) {
             System.err.println("\nError : Input salah");
-            return 9;
+            return 0;
         }
     }
+
+
 }

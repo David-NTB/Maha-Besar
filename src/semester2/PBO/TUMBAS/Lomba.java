@@ -35,24 +35,24 @@ public class Lomba {
     }
 
     public double getHasil() {
-        return ((getNilai1() + getNilai2() + getNilai3() + getNilai4()) / 4); 
+        return ((double) (getNilai1() + getNilai2() + getNilai3() + getNilai4()) / 4);
     }
 }
 
-class UIUX extends Lomba{
+class UIUX extends Lomba {
     public UIUX(int nilai1, int nilai2, int nilai3, int nilai4) {
         super(nilai1, nilai2, nilai3, nilai4);
     }
 }
 
-class Algo extends Lomba{
+class Algo extends Lomba {
     public Algo(int nilai1, int nilai2, int nilai3) {
         super(nilai1, nilai2, nilai3, 0);
     }
 
     @Override
     public double getHasil() {
-        return ((getNilai1() + getNilai2() + getNilai3()) / 3);
+        return ((double) (getNilai1() + getNilai2() + getNilai3()) / 3);
     }
 
     @Override
@@ -61,14 +61,14 @@ class Algo extends Lomba{
     }
 }
 
-class Data extends Lomba{
+class Data extends Lomba {
     public Data(int nilai1, int nilai2, int nilai3) {
         super(nilai1, nilai2, nilai3, 0);
     }
 
     @Override
     public double getHasil() {
-        return ((getNilai1() + getNilai2() + getNilai3()) / 3);
+        return ((double) (getNilai1() + getNilai2() + getNilai3()) / 3);
     }
 
     @Override

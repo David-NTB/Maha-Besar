@@ -87,7 +87,7 @@ public class DataManager {
         System.out.print("Masukkan nama kelompok : ");
         String nama = Util.inputLine();
         boolean addKelompok = true;
-        
+
         for (Kelompok kelompok : listKelompok) {
             if (nama.equals(kelompok.getNama())) {
                 System.out.println("\nData kelompok sudah ada");
@@ -114,12 +114,22 @@ public class DataManager {
 
     public void searchKelompok() {
         ArrayList<Kelompok> listKelompok = loadData();
-        Kelompok kelompok = getKelompok(listKelompok);
-        if (kelompok != null) {
-            System.out.println(kelompok);
-        } else {
-            System.out.println("\nData tidak ditemukan");
+        System.out.print("Masukkan nama kelompok : ");
+        String nama = Util.inputLine().toLowerCase();
+        for (Kelompok kelompok : listKelompok) {
+            if (kelompok.getNama().toLowerCase().contains(nama)) {
+                System.out.println(kelompok);
+            }
         }
+
+
+        // ArrayList<Kelompok> listKelompok = loadData();
+        // Kelompok kelompok = getKelompok(listKelompok);
+        // if (kelompok != null) {
+        //     System.out.println(kelompok);
+        // } else {
+        //     System.out.println("\nData tidak ditemukan");
+        // }
     }
 
     // OPERASI_DATA_LOMBA
@@ -142,7 +152,8 @@ public class DataManager {
             for (Kelompok kelompok : listKelompok) {
                 if (kelompok.getNama() == selectedKelompok.getNama()) {
                     if (kelompok.getLomba().getClass().getSimpleName().equals("Lomba")) {
-                        listKelompok.set(listKelompok.indexOf(kelompok), new Kelompok(selectedKelompok.getNama(), lomba));
+                        listKelompok.set(listKelompok.indexOf(kelompok),
+                                new Kelompok(selectedKelompok.getNama(), lomba));
                         saveData(listKelompok);
                     } else {
                         System.out.println("\n\"" + selectedKelompok.getNama() + "\" sudah memiliki lomba");
@@ -157,16 +168,21 @@ public class DataManager {
     public void addNilai(Lomba lomba) {
         ArrayList<Kelompok> listKelompok = loadData();
         Kelompok selectedKelompok = getKelompok(listKelompok);
-        lomba = setNilai(selectedKelompok, lomba);
-        
+
         if (selectedKelompok != null) {
             for (Kelompok kelompok : listKelompok) {
                 if (kelompok.getNama() == selectedKelompok.getNama()) {
-                    if (kelompok.getLomba().getClass().getSimpleName().equals(lomba.getClass().getSimpleName())) {
-                        listKelompok.set(listKelompok.indexOf(kelompok), new Kelompok(selectedKelompok.getNama(), lomba));
-                        saveData(listKelompok);
+                    if (!selectedKelompok.getLomba().getClass().getSimpleName().equals("Lomba")) {
+                        if (kelompok.getLomba().getClass().getSimpleName().equals(lomba.getClass().getSimpleName())) {
+                            lomba = setNilai(selectedKelompok, lomba);
+                            listKelompok.set(listKelompok.indexOf(kelompok),
+                                    new Kelompok(selectedKelompok.getNama(), lomba));
+                            saveData(listKelompok);
+                        } else {
+                            System.out.println("\n\"" + selectedKelompok.getNama() + "\" sudah memiliki lomba");
+                        }
                     } else {
-                        System.out.println("\n\"" + selectedKelompok.getNama() + "\" sudah memiliki lomba");
+                        System.out.println("\n\"" + selectedKelompok.getNama() + "\" belum memilih lomba");
                     }
                 }
             }
@@ -184,7 +200,7 @@ public class DataManager {
         System.out.print("Nilai 3 : ");
         lomba.nilai3 = Util.inputInt();
         if (lomba.getClass().getSimpleName().equals("UIUX")) {
-            System.out.println("Nilai 4 : ");
+            System.out.print("Nilai 4 : ");
             lomba.nilai4 = Util.inputInt();
         }
         return lomba;
