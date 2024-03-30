@@ -1,0 +1,1 @@
+Kalau error ganti FILENAME di dalam class DataManager sesuai dengan file "database.txt"
