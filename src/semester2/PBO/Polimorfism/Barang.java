@@ -116,10 +116,10 @@ class Superstore {
                 if (kodeBarang.equals(arrBarang[a].getKodeBarang())){
                     if (arrBarang[a].getJumlah() != 0) {
                         int stok = arrBarang[a].getJumlah() - jumlah;
-                        int harga = arrBarang[a].getHarga() * jumlah;
+                        totalHarga = arrBarang[a].getHarga() * jumlah;
                         if (stok >= 0) {
                             arrBarang[a].setJumlah(stok);
-                            System.out.println("Barang terjual, harga : " + harga);
+                            System.out.println("Barang terjual, harga : " + totalHarga);
                         } else {
                             System.out.println("Stok tidak mencukupi, pembelian dibatalkan");
                         }
@@ -143,10 +143,10 @@ class Superstore {
                 if (kodeBarang.equals(arrBarang[a].getKodeBarang())){
                     if (arrBarang[a].getJumlah() != 0) {
                         int stok = arrBarang[a].getJumlah() - jumlah;
-                        int harga = arrBarang[a].getHarga() * jumlah * diskon / 100;
+                        totalHarga = arrBarang[a].getHarga() * jumlah * diskon / 100;
                         if (stok >= 0) {
                             arrBarang[a].setJumlah(stok);
-                            System.out.println("Barang terjual, harga : " + harga);
+                            System.out.println("Barang terjual, harga : " + totalHarga);
                         } else {
                             System.out.println("Stok tidak mencukupi, pembelian dibatalkan");
                         }
