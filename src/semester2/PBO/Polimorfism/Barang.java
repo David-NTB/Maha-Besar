@@ -1,5 +1,7 @@
 package semester2.PBO.Polimorfism;
 
+import java.util.Scanner;
+
 class Barang {
     private String kodeBarang;
     private String namaBarang;
@@ -31,8 +33,16 @@ class Barang {
         return this.harga;
     }
 
+    public void setHarga(int harga) {
+        this.harga = harga;
+    }
+
     public int getJumlah() {
         return this.jumlah;
+    }
+
+    public void setJumlah(int jumlah) {
+        this.jumlah = jumlah;
     }
 
     public void infoBarang() {
@@ -65,24 +75,97 @@ class Superstore {
         System.out.println();
     }
     
-    public void updateBarang(int harga) {
-        
+    public void updateBarang(String kodeBarang, int harga) {
+        if (noItem != 0) {
+            for (int a = 0; a < noItem; a++) {
+                if (kodeBarang.equals(arrBarang[a].getKodeBarang())){
+                    arrBarang[a].setHarga(harga);
+                    System.out.println(kodeBarang + " Diperbarui");
+                    break;
+                } else if (a == noItem-1) {
+                    System.out.println(kodeBarang + " NOT FOUND");
+                }
+            }
+        } else {
+            System.out.println("Belum ada barang dalam list data");
+        }
+        System.out.println();
     }
     
-    public void updateBarang(int harga, int jumlah) {
-
+    public void updateBarang(String kodeBarang, int harga, int jumlah) {
+        if (noItem != 0) {
+            for (int a = 0; a < noItem; a++) {
+                if (kodeBarang.equals(arrBarang[a].getKodeBarang())){
+                    arrBarang[a].setHarga(harga);
+                    arrBarang[a].setJumlah(jumlah);
+                    System.out.println(kodeBarang + " Diperbarui");
+                    break;
+                } else if (a == noItem-1) {
+                    System.out.println(kodeBarang + " NOT FOUND");
+                }
+            }
+        } else {
+            System.out.println("Belum ada barang dalam list data");
+        }
+        System.out.println();
     }
 
-    public void jualBarang(int jumlah) {
-        
+    public void jualBarang(String kodeBarang, int jumlah) {
+        if (noItem != 0) {
+            for (int a = 0; a < noItem; a++) {
+                if (kodeBarang.equals(arrBarang[a].getKodeBarang())){
+                    if (arrBarang[a].getJumlah() != 0) {
+                        int stok = arrBarang[a].getJumlah() - jumlah;
+                        int harga = arrBarang[a].getHarga() * jumlah;
+                        if (stok >= 0) {
+                            arrBarang[a].setJumlah(stok);
+                            System.out.println("Barang terjual, harga : " + harga);
+                        } else {
+                            System.out.println("Stok tidak mencukupi, pembelian dibatalkan");
+                        }
+                    } else {
+                        System.out.println("Stok barang habis, pembelian dibatalkan");
+                    }
+                    break;
+                } else if (a == noItem-1) {
+                    System.out.println(kodeBarang + " NOT FOUND");
+                }
+            }
+        } else {
+            System.out.println("Belum ada barang dalam list data");
+        }
+        System.out.println();
     }
 
-    public void jualBarang(int jumlah, int diskon) {
-        
+    public void jualBarang(String kodeBarang, int jumlah, int diskon) {
+        if (noItem != 0) {
+            for (int a = 0; a < noItem; a++) {
+                if (kodeBarang.equals(arrBarang[a].getKodeBarang())){
+                    if (arrBarang[a].getJumlah() != 0) {
+                        int stok = arrBarang[a].getJumlah() - jumlah;
+                        int harga = arrBarang[a].getHarga() * jumlah * diskon / 100;
+                        if (stok >= 0) {
+                            arrBarang[a].setJumlah(stok);
+                            System.out.println("Barang terjual, harga : " + harga);
+                        } else {
+                            System.out.println("Stok tidak mencukupi, pembelian dibatalkan");
+                        }
+                    } else {
+                        System.out.println("Stok barang habis, pembelian dibatalkan");
+                    }
+                    break;
+                } else if (a == noItem-1) {
+                    System.out.println(kodeBarang + " NOT FOUND");
+                }
+            }
+        } else {
+            System.out.println("Belum ada barang dalam list data");
+        }
+        System.out.println();
     }
 
     public void infoStockAllBarang() {
-        System.out.println("Daftar Barang");
+        System.out.println("===== DAFTAR BARANG =====");
         if (noItem != 0) {
             for (int a = 0; a < noItem; a++) {
                 System.out.println("\tKode Barang : " + arrBarang[a].getKodeBarang());
@@ -98,22 +181,39 @@ class Superstore {
 } // end of class Superstore
 
 class DriverSuperStore {
+    static Scanner input = new Scanner(System.in);
+
     public static void main(String[] args) {
+        String kodeBarang;
+        int jumlah, diskon;
         Superstore st = new Superstore();
 
-        System.out.println("Menambah Barang");
+        System.out.println("===== MENAMBAH BARANG =====");
         st.tambahBarang("AO1000", "Susu Bendera", 50000);
         st.tambahBarang("BO1000", "Kertas HVS", 28000, 3);
         st.tambahBarang("CO1000", "Kacang Kedelai", 4700, 5);
         st.infoStockAllBarang();
         
-        System.out.println("Update Barang");
-        st.updateBarang(0);
-        st.updateBarang(0, 0);
+        System.out.println("===== UPDATE BARANG =====");
+        st.updateBarang("AO1000", 0);
+        st.updateBarang("BO1000", 0, 0);
         st.infoStockAllBarang();
-
-        System.out.println("Penjualan Barang");
-        st.jualBarang(0);
-        st.jualBarang(0, 0);
+        
+        System.out.println("===== PENJUALAN BARANG =====");
+        System.out.print("Masukkan kode barang : ");
+        kodeBarang = input.nextLine();
+        System.out.print("Masukkan jumlah barang yg dijual : ");
+        jumlah = input.nextInt();
+        st.jualBarang(kodeBarang, jumlah);
+        input.nextLine();
+        
+        System.out.print("Masukkan kode barang : ");
+        kodeBarang = input.nextLine();
+        System.out.print("Masukkan jumlah barang yg dijual : ");
+        jumlah = input.nextInt();
+        System.out.print("Masukkan diskon(%) : ");
+        diskon = input.nextInt();
+        st.jualBarang(kodeBarang, jumlah, diskon);
+        st.infoStockAllBarang();
     }
 }
