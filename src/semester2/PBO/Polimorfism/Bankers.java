@@ -11,6 +11,7 @@ class Rekening {
     private String noIdentitas;
     private String noIjin;
 
+    // Overloading Constructor
     public Rekening(String noRekening, double saldo, String namaPemilik, String noIdentitas) {
         this.noRekening = noRekening;
         this.saldo = saldo;
@@ -57,7 +58,7 @@ class Rekening {
     }
 
     public void informasiRekening() {
-        if (getNamaPerusahaan() == null) {
+        if (getNamaPerusahaan() == null) { // Menampilkan data sesuai jenis rekening
             System.out.println("Jenis rekening  : Perorangan");
             System.out.println("No Rekening     : " + getNoRekening());
             System.out.println("Saldo           : " + getSaldo());
@@ -81,6 +82,7 @@ class Bankers {
     ArrayList<Rekening> listRek = new ArrayList<>();
     Scanner inputUser = new Scanner(System.in);
 
+    // Overloading Method
     public void createRek(String noRekening, double saldo, String namaPemilik, String noIdentitas) {
         if (saldo >= 100000) {
             listRek.add(new Rekening(noRekening, saldo, namaPemilik, noIdentitas));
@@ -108,46 +110,124 @@ class Bankers {
         System.out.println();
     }
 
-    public void tambahSaldo(String noRekening, double saldo) {
+    public Rekening getRekening(String noRekening) {
         for (Rekening rekening : listRek) {
             if (rekening.getNoRekening().equals(noRekening)) {
-                rekening.setSaldo(rekening.getSaldo() + saldo);
-                System.out.println("Saldo \"" + noRekening + "\" BERHASIL ditambahkan");
-                System.out.println();
-                rekening.informasiRekening();
-                break;
-            } else if (rekening == listRek.get(listRek.size() - 1)) {
-                System.out.println("Rekening \"" + noRekening + "\" TIDAK ditemukan");
+                return rekening;
             }
+        }
+        return null;
+    }
+
+    public void tambahSaldo(String noRekening, double saldo) {
+        if (getRekening(noRekening) != null) {
+            getRekening(noRekening).setSaldo(getRekening(noRekening).getSaldo() + saldo);
+            System.out.println("Saldo \"" + noRekening + "\" BERHASIL ditambahkan");
+            System.out.println();
+            getRekening(noRekening).informasiRekening();
+        } else {
+            System.out.println("Rekening \"" + noRekening + "\" TIDAK ditemukan");
         }
         System.out.println();
     }
 
     public void tarikSaldo(String noRekening, double saldo) {
-        for (Rekening rekening : listRek) {
-            if (rekening.getNoRekening().equals(noRekening)) {
-                if ((rekening.getSaldo() - saldo) >= 0) {
-                    rekening.setSaldo(rekening.getSaldo() - saldo);
-                    System.out.println("Saldo \"" + noRekening + "\" BERHASIL ditarik");
-                    System.out.println();
-                    rekening.informasiRekening();
-                    break;
+        if (getRekening(noRekening) != null) {
+            if ((getRekening(noRekening).getSaldo() - saldo) >= 0) {
+                getRekening(noRekening).setSaldo(getRekening(noRekening).getSaldo() - saldo);
+                System.out.println("Saldo \"" + noRekening + "\" BERHASIL ditarik");
+                System.out.println();
+                getRekening(noRekening).informasiRekening();
+            } else {
+                System.out.println("Jumlah saldo TIDAK mencukupi");
+                System.out.println("Penarikan saldo DIBATALKAN");
+            }
+        } else {
+            System.out.println("Rekening \"" + noRekening + "\" TIDAK ditemukan");
+        }
+        System.out.println();
+    }
+
+    public void transferBank(String rekAwal, String rekTujuan1, double saldo) {
+        if (getRekening(rekAwal) != null) {
+            if (getRekening(rekTujuan1) != null) {
+                if ((getRekening(rekAwal).getSaldo() - saldo) >= 0) {
+                    getRekening(rekAwal).setSaldo(getRekening(rekAwal).getSaldo() - saldo);
+                    getRekening(rekTujuan1).setSaldo(getRekening(rekTujuan1).getSaldo() + saldo);
+                    System.out.println("Saldo " + saldo + " BERHASIL ditransfer");
+                    System.out.println("Dari \"" + rekAwal + "\" ke \"" + rekTujuan1);
                 } else {
                     System.out.println("Jumlah saldo TIDAK mencukupi");
                     System.out.println("Penarikan saldo DIBATALKAN");
-                    break;
                 }
-            } else if (rekening == listRek.get(listRek.size() - 1)) {
-                System.out.println("Rekening \"" + noRekening + "\" TIDAK ditemukan");
+            } else {
+                System.out.println("Rekening \"" + rekTujuan1 + "\" TIDAK ditemukan");
             }
+        } else {
+            System.out.println("Rekening \"" + rekAwal + "\" TIDAK ditemukan");
+        }
+        System.out.println();
+    }
+
+    public void transferBank(String rekAwal, String rekTujuan1, String rekTujuan2, double saldo) {
+        if (getRekening(rekAwal) != null) {
+            if (getRekening(rekTujuan1) != null) {
+                if (getRekening(rekTujuan2) != null) {
+                    if ((getRekening(rekAwal).getSaldo() - (saldo * 2)) >= 0) {
+                        getRekening(rekAwal).setSaldo(getRekening(rekAwal).getSaldo() - saldo);
+                        getRekening(rekTujuan1).setSaldo(getRekening(rekTujuan1).getSaldo() + saldo);
+                        getRekening(rekTujuan2).setSaldo(getRekening(rekTujuan2).getSaldo() + saldo);
+                        System.out.println("Saldo " + saldo + " BERHASIL ditransfer");
+                        System.out.println("Dari \"" + rekAwal + "\" ke \"" + rekTujuan1 + ", " + rekTujuan2);
+                    } else {
+                        System.out.println("Jumlah saldo TIDAK mencukupi");
+                        System.out.println("Penarikan saldo DIBATALKAN");
+                    }
+                } else {
+                    System.out.println("Rekening \"" + rekTujuan2 + "\" TIDAK ditemukan");
+                }
+            } else {
+                System.out.println("Rekening \"" + rekTujuan1 + "\" TIDAK ditemukan");
+            }
+        } else {
+            System.out.println("Rekening \"" + rekAwal + "\" TIDAK ditemukan");
+        }
+        System.out.println();
+    }
+
+    public void transferBank(String rekAwal, String rekTujuan1, String rekTujuan2, String rekTujuan3, double saldo) {
+        if (getRekening(rekAwal) != null) {
+            if (getRekening(rekTujuan1) != null) {
+                if (getRekening(rekTujuan2) != null) {
+                    if (getRekening(rekTujuan3) != null) {
+                        if ((getRekening(rekAwal).getSaldo() - (saldo * 3)) >= 0) {
+                            getRekening(rekAwal).setSaldo(getRekening(rekAwal).getSaldo() - saldo);
+                            getRekening(rekTujuan1).setSaldo(getRekening(rekTujuan1).getSaldo() + saldo);
+                            getRekening(rekTujuan2).setSaldo(getRekening(rekTujuan2).getSaldo() + saldo);
+                            getRekening(rekTujuan3).setSaldo(getRekening(rekTujuan3).getSaldo() + saldo);
+                            System.out.println("Saldo " + saldo + " BERHASIL ditransfer");
+                            System.out.println("Dari \"" + rekAwal + "\" ke \"" + rekTujuan1 + ", " + rekTujuan2 + ", "
+                                    + rekTujuan3);
+                        } else {
+                            System.out.println("Jumlah saldo TIDAK mencukupi");
+                            System.out.println("Penarikan saldo DIBATALKAN");
+                        }
+                    } else {
+                        System.out.println("Rekening \"" + rekTujuan2 + "\" TIDAK ditemukan");
+                    }
+                } else {
+                    System.out.println("Rekening \"" + rekTujuan2 + "\" TIDAK ditemukan");
+                }
+            } else {
+                System.out.println("Rekening \"" + rekTujuan1 + "\" TIDAK ditemukan");
+            }
+        } else {
+            System.out.println("Rekening \"" + rekAwal + "\" TIDAK ditemukan");
         }
         System.out.println();
     }
 
     public void infoAllRekening() {
-        System.out.println("==================================================");
-        System.out.println("              INPO ALL REKENING");
-        System.out.println("==================================================");
         for (Rekening rekening : listRek) {
             rekening.informasiRekening();
             System.out.println();
@@ -165,8 +245,9 @@ class Driver {
         System.out.println("==================================================");
         bk.createRek("REK001", 100000, "Paijo", "I01");
         bk.createRek("REK002", 500000, "Tukiyem", "Per02", "I02", "Ijin02");
-        bk.createRek("REK003", 90000, "Juminem", "I01"); // setor awal kureng
-        bk.createRek("REK004", 400000, "Sarmono", "Per02", "I02", "Ijin02"); // setor awal kureng
+        bk.createRek("REK003", 100000, "Juminem", "I03");
+        bk.createRek("REK004", 500000, "Sarmono", "Per04", "I04", "Ijin04");
+        bk.createRek("REK005", 10000, "Juminem", "I03");// setor awal kureng
 
         // MENAMBAH SALDO
         System.out.println("==================================================");
@@ -174,7 +255,7 @@ class Driver {
         System.out.println("==================================================");
         bk.tambahSaldo("REK001", 100000);
         bk.tambahSaldo("REK002", 100000);
-        bk.tambahSaldo("REK003", 100000); // not found
+        bk.tambahSaldo("REK005", 100000); // not found
 
         // MENARIK SALDO
         System.out.println("==================================================");
@@ -182,11 +263,29 @@ class Driver {
         System.out.println("==================================================");
         bk.tarikSaldo("REK001", 50000);
         bk.tarikSaldo("REK002", 50000);
-        bk.tarikSaldo("REK001", 500000); // saldo tidak cukup
-        bk.tarikSaldo("REK003", 50000); // not found
+        bk.tarikSaldo("REK001", 500000); // saldo kureng
+        bk.tarikSaldo("REK005", 50000); // not found
+
+        // TRANSFER BANK
+        System.out.println("==================================================");
+        System.out.println("               TRANSFER BANK");
+        System.out.println("==================================================");
+        bk.transferBank("REK002", "REK001", 50000);
+        bk.transferBank("REK002", "REK001", "REK003", 50000);
+        bk.transferBank("REK004", "REK001", "REK002", "REK003", 50000);
+        bk.transferBank("REK003", "REK001", 500000); // saldo kureng
+        bk.transferBank("REK005", "REK001", 500000); // not found
 
         // INP ALL REKENING
+        System.out.println("==================================================");
+        System.out.println("              INPO ALL REKENING");
+        System.out.println("==================================================");
         bk.infoAllRekening();
 
     }
 }
+
+/* POLIMORFISME
+ *  Overload Constructor : Rekening
+ *  Overload Method : createRek, transferBank
+ */
