@@ -148,39 +148,38 @@ public class MainHewan {
 
 
 
-
-
-
 /*
-Ular
-Jenis 		: Kobra
-Suara 		: Mendesis
-Gerak		: Merayap
-Berbisa 	: ya
+Output:
 
-Jenis 		: Boa
-Suara 		: Mendesis
-Gerak		: Merayap
-Berbisa 	: tidak
+            Ular
+Jenis 	    	: Kobra
+Suara 	    	: Mendesis
+Gerak		    : Merayap
+Berbisa 	    : ya
 
-Sapi
-Jenis 		: Brangus
-Suara 		: Mooo
-Gerak		: Berjalan
+Jenis 	    	: Boa
+Suara 	    	: Mendesis
+Gerak	    	: Merayap
+Berbisa 	    : tidak
+
+            Sapi
+Jenis 	    	: Brangus
+Suara 	    	: Mooo
+Gerak	    	: Berjalan
 Jenis Produk 	: Daging
 
-Jenis 		: Friesian
-Suara 		: Mooo
-Gerak		: Berjalan
+Jenis 		    : Friesian
+Suara 		    : Mooo
+Gerak		    : Berjalan
 Jenis Produk 	: Susu
 
-Burung Beo
-Jenis 		: Burung Beo
-Suara 		: Berkicau
-Gerak		: Terbang
+          Burung Beo
+Jenis 	    	: Burung Beo
+Suara 	    	: Berkicau
+Gerak	    	: Terbang
 
-Jenis 		: Burung Beo
-Suara 		: Berkicau
-Gerak		: Terbang
+Jenis 		    : Burung Beo
+Suara 		    : Berkicau
+Gerak		    : Terbang
 Menirukan Suara : “Ayo Belajar PBO”
 */
