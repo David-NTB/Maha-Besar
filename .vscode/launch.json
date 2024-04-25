@@ -1,0 +1,560 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "MainHewan",
+            "request": "launch",
+            "mainClass": "semester2.PBO.UTS.MainHewan",
+            "projectName": "Maha-Besar_e209ab3c"
+        },
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "InfoBulan",
+            "request": "launch",
+            "mainClass": "semester1.Latihan1.InfoBulan",
+            "projectName": "Maha-Besar_e209ab3c"
+        },
+        {
+            "type": "java",
+            "name": "Input",
+            "request": "launch",
+            "mainClass": "semester1.Latihan1.Input",
+            "projectName": "Maha-Besar_e209ab3c"
+        },
+        {
+            "type": "java",
+            "name": "SelisihWaktu",
+            "request": "launch",
+            "mainClass": "semester1.Latihan1.SelisihWaktu",
+            "projectName": "Maha-Besar_e209ab3c"
+        },
+        {
+            "type": "java",
+            "name": "NextDay",
+            "request": "launch",
+            "mainClass": "semester1.Latihan2.NextDay",
+            "projectName": "Maha-Besar_e209ab3c"
+        },
+        {
+            "type": "java",
+            "name": "PrevDay",
+            "request": "launch",
+            "mainClass": "semester1.Latihan2.PrevDay",
+            "projectName": "Maha-Besar_e209ab3c"
+        },
+        {
+            "type": "java",
+            "name": "TDAT1",
+            "request": "launch",
+            "mainClass": "semester1.Latihan2.TDAT1",
+            "projectName": "Maha-Besar_e209ab3c"
+        },
+        {
+            "type": "java",
+            "name": "TDAT2",
+            "request": "launch",
+            "mainClass": "semester1.Latihan2.TDAT2",
+            "projectName": "Maha-Besar_e209ab3c"
+        },
+        {
+            "type": "java",
+            "name": "test",
+            "request": "launch",
+            "mainClass": "semester1.Latihan2.test",
+            "projectName": "Maha-Besar_e209ab3c"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "semester1.Latihan3.Main",
+            "projectName": "Maha-Besar_e209ab3c"
+        },
+        {
+            "type": "java",
+            "name": "CetakNumber",
+            "request": "launch",
+            "mainClass": "semester1.Latihan4.CetakNumber",
+            "projectName": "Maha-Besar_e209ab3c"
+        },
+        {
+            "type": "java",
+            "name": "LogoHitler",
+            "request": "launch",
+            "mainClass": "semester1.Latihan4.LogoHitler",
+            "projectName": "Maha-Besar_e209ab3c"
+        },
+        {
+            "type": "java",
+            "name": "SpiralAbyss",
+            "request": "launch",
+            "mainClass": "semester1.Latihan4.SpiralAbyss",
+            "projectName": "Maha-Besar_e209ab3c"
+        },
+        {
+            "type": "java",
+            "name": "CekGanjilGenap",
+            "request": "launch",
+            "mainClass": "semester1.Tugas1.CekGanjilGenap",
+            "projectName": "Maha-Besar_e209ab3c"
+        },
+        {
+            "type": "java",
+            "name": "BankOfMiddleEarthCC",
+            "request": "launch",
+            "mainClass": "semester1.Tugas10.BankOfMiddleEarthCC",
+            "projectName": "Maha-Besar_e209ab3c"
+        },
+        {
+            "type": "java",
+            "name": "DriverMahasiswa",
+            "request": "launch",
+            "mainClass": "semester1.Tugas10.DriverMahasiswa",
+            "projectName": "Maha-Besar_e209ab3c"
+        },
+        {
+            "type": "java",
+            "name": "SIM",
+            "request": "launch",
+            "mainClass": "semester1.Tugas10.SIM",
+            "projectName": "Maha-Besar_e209ab3c"
+        },
+        {
+            "type": "java",
+            "name": "CollectionsComparable",
+            "request": "launch",
+            "mainClass": "semester1.Tugas11.CollectionsComparable",
+            "projectName": "Maha-Besar_e209ab3c"
+        },
+        {
+            "type": "java",
+            "name": "CollectionsComparator",
+            "request": "launch",
+            "mainClass": "semester1.Tugas11.CollectionsComparator",
+            "projectName": "Maha-Besar_e209ab3c"
+        },
+        {
+            "type": "java",
+            "name": "Sorting",
+            "request": "launch",
+            "mainClass": "semester1.Tugas11.Sorting",
+            "projectName": "Maha-Besar_e209ab3c"
+        },
+        {
+            "type": "java",
+            "name": "SortingWithVisual",
+            "request": "launch",
+            "mainClass": "semester1.Tugas11.SortingWithVisual",
+            "projectName": "Maha-Besar_e209ab3c"
+        },
+        {
+            "type": "java",
+            "name": "TA",
+            "request": "launch",
+            "mainClass": "semester1.Tugas11.TA",
+            "projectName": "Maha-Besar_e209ab3c"
+        },
+        {
+            "type": "java",
+            "name": "PengubahValue",
+            "request": "launch",
+            "mainClass": "semester1.Tugas2.PengubahValue",
+            "projectName": "Maha-Besar_e209ab3c"
+        },
+        {
+            "type": "java",
+            "name": "Ritel",
+            "request": "launch",
+            "mainClass": "semester1.Tugas2.Ritel",
+            "projectName": "Maha-Besar_e209ab3c"
+        },
+        {
+            "type": "java",
+            "name": "Ritel3",
+            "request": "launch",
+            "mainClass": "semester1.Tugas2.Ritel3",
+            "projectName": "Maha-Besar_e209ab3c"
+        },
+        {
+            "type": "java",
+            "name": "TipeDataPrimitif",
+            "request": "launch",
+            "mainClass": "semester1.Tugas2.TipeDataPrimitif",
+            "projectName": "Maha-Besar_e209ab3c"
+        },
+        {
+            "type": "java",
+            "name": "TugasAkhir2",
+            "request": "launch",
+            "mainClass": "semester1.Tugas2.TugasAkhir2",
+            "projectName": "Maha-Besar_e209ab3c"
+        },
+        {
+            "type": "java",
+            "name": "BankAPK",
+            "request": "launch",
+            "mainClass": "semester1.Tugas3.BankAPK",
+            "projectName": "Maha-Besar_e209ab3c"
+        },
+        {
+            "type": "java",
+            "name": "NilaiMK",
+            "request": "launch",
+            "mainClass": "semester1.Tugas3.NilaiMK",
+            "projectName": "Maha-Besar_e209ab3c"
+        },
+        {
+            "type": "java",
+            "name": "Pendahuluan",
+            "request": "launch",
+            "mainClass": "semester1.Tugas3.Pendahuluan",
+            "projectName": "Maha-Besar_e209ab3c"
+        },
+        {
+            "type": "java",
+            "name": "RitelMakan",
+            "request": "launch",
+            "mainClass": "semester1.Tugas3.RitelMakan",
+            "projectName": "Maha-Besar_e209ab3c"
+        },
+        {
+            "type": "java",
+            "name": "NilaiMK(1)",
+            "request": "launch",
+            "mainClass": "semester1.Tugas4.NilaiMK",
+            "projectName": "Maha-Besar_e209ab3c"
+        },
+        {
+            "type": "java",
+            "name": "NilaiMK2",
+            "request": "launch",
+            "mainClass": "semester1.Tugas4.NilaiMK2",
+            "projectName": "Maha-Besar_e209ab3c"
+        },
+        {
+            "type": "java",
+            "name": "Pendahuluan(1)",
+            "request": "launch",
+            "mainClass": "semester1.Tugas4.Pendahuluan",
+            "projectName": "Maha-Besar_e209ab3c"
+        },
+        {
+            "type": "java",
+            "name": "RitelMK",
+            "request": "launch",
+            "mainClass": "semester1.Tugas4.RitelMK",
+            "projectName": "Maha-Besar_e209ab3c"
+        },
+        {
+            "type": "java",
+            "name": "TA1",
+            "request": "launch",
+            "mainClass": "semester1.Tugas4.TA1",
+            "projectName": "Maha-Besar_e209ab3c"
+        },
+        {
+            "type": "java",
+            "name": "TA2",
+            "request": "launch",
+            "mainClass": "semester1.Tugas4.TA2",
+            "projectName": "Maha-Besar_e209ab3c"
+        },
+        {
+            "type": "java",
+            "name": "Parkir",
+            "request": "launch",
+            "mainClass": "semester1.Tugas5.Parkir",
+            "projectName": "Maha-Besar_e209ab3c"
+        },
+        {
+            "type": "java",
+            "name": "PecahUang",
+            "request": "launch",
+            "mainClass": "semester1.Tugas5.PecahUang",
+            "projectName": "Maha-Besar_e209ab3c"
+        },
+        {
+            "type": "java",
+            "name": "TA(1)",
+            "request": "launch",
+            "mainClass": "semester1.Tugas5.TA",
+            "projectName": "Maha-Besar_e209ab3c"
+        },
+        {
+            "type": "java",
+            "name": "Pajak",
+            "request": "launch",
+            "mainClass": "semester1.Tugas6.Pajak",
+            "projectName": "Maha-Besar_e209ab3c"
+        },
+        {
+            "type": "java",
+            "name": "Produk",
+            "request": "launch",
+            "mainClass": "semester1.Tugas6.Produk",
+            "projectName": "Maha-Besar_e209ab3c"
+        },
+        {
+            "type": "java",
+            "name": "CekPrima",
+            "request": "launch",
+            "mainClass": "semester1.Tugas7.CekPrima",
+            "projectName": "Maha-Besar_e209ab3c"
+        },
+        {
+            "type": "java",
+            "name": "DeretBilangan",
+            "request": "launch",
+            "mainClass": "semester1.Tugas7.DeretBilangan",
+            "projectName": "Maha-Besar_e209ab3c"
+        },
+        {
+            "type": "java",
+            "name": "DeretJumlah",
+            "request": "launch",
+            "mainClass": "semester1.Tugas7.DeretJumlah",
+            "projectName": "Maha-Besar_e209ab3c"
+        },
+        {
+            "type": "java",
+            "name": "Menu",
+            "request": "launch",
+            "mainClass": "semester1.Tugas7.Menu",
+            "projectName": "Maha-Besar_e209ab3c"
+        },
+        {
+            "type": "java",
+            "name": "TA_1",
+            "request": "launch",
+            "mainClass": "semester1.Tugas7.TA_1",
+            "projectName": "Maha-Besar_e209ab3c"
+        },
+        {
+            "type": "java",
+            "name": "TA_2",
+            "request": "launch",
+            "mainClass": "semester1.Tugas7.TA_2",
+            "projectName": "Maha-Besar_e209ab3c"
+        },
+        {
+            "type": "java",
+            "name": "TA_3",
+            "request": "launch",
+            "mainClass": "semester1.Tugas7.TA_3",
+            "projectName": "Maha-Besar_e209ab3c"
+        },
+        {
+            "type": "java",
+            "name": "TA_4",
+            "request": "launch",
+            "mainClass": "semester1.Tugas7.TA_4",
+            "projectName": "Maha-Besar_e209ab3c"
+        },
+        {
+            "type": "java",
+            "name": "TA_5",
+            "request": "launch",
+            "mainClass": "semester1.Tugas7.TA_5",
+            "projectName": "Maha-Besar_e209ab3c"
+        },
+        {
+            "type": "java",
+            "name": "TebakAngka",
+            "request": "launch",
+            "mainClass": "semester1.Tugas7.TebakAngka",
+            "projectName": "Maha-Besar_e209ab3c"
+        },
+        {
+            "type": "java",
+            "name": "NilaiMK2(1)",
+            "request": "launch",
+            "mainClass": "semester1.Tugas7.Temp.NilaiMK2",
+            "projectName": "Maha-Besar_e209ab3c"
+        },
+        {
+            "type": "java",
+            "name": "TA1(1)",
+            "request": "launch",
+            "mainClass": "semester1.Tugas7.Temp.TA1",
+            "projectName": "Maha-Besar_e209ab3c"
+        },
+        {
+            "type": "java",
+            "name": "TA2(1)",
+            "request": "launch",
+            "mainClass": "semester1.Tugas7.Temp.TA2",
+            "projectName": "Maha-Besar_e209ab3c"
+        },
+        {
+            "type": "java",
+            "name": "Factorial",
+            "request": "launch",
+            "mainClass": "semester1.Tugas8.Factorial",
+            "projectName": "Maha-Besar_e209ab3c"
+        },
+        {
+            "type": "java",
+            "name": "TA_x",
+            "request": "launch",
+            "mainClass": "semester1.Tugas8.TA_x",
+            "projectName": "Maha-Besar_e209ab3c"
+        },
+        {
+            "type": "java",
+            "name": "triangle",
+            "request": "launch",
+            "mainClass": "semester1.Tugas8.triangle",
+            "projectName": "Maha-Besar_e209ab3c"
+        },
+        {
+            "type": "java",
+            "name": "Array1",
+            "request": "launch",
+            "mainClass": "semester1.Tugas9.Array1",
+            "projectName": "Maha-Besar_e209ab3c"
+        },
+        {
+            "type": "java",
+            "name": "Array2",
+            "request": "launch",
+            "mainClass": "semester1.Tugas9.Array2",
+            "projectName": "Maha-Besar_e209ab3c"
+        },
+        {
+            "type": "java",
+            "name": "Array3",
+            "request": "launch",
+            "mainClass": "semester1.Tugas9.Array3",
+            "projectName": "Maha-Besar_e209ab3c"
+        },
+        {
+            "type": "java",
+            "name": "Array4",
+            "request": "launch",
+            "mainClass": "semester1.Tugas9.Array4",
+            "projectName": "Maha-Besar_e209ab3c"
+        },
+        {
+            "type": "java",
+            "name": "TA1(2)",
+            "request": "launch",
+            "mainClass": "semester1.Tugas9.TA1",
+            "projectName": "Maha-Besar_e209ab3c"
+        },
+        {
+            "type": "java",
+            "name": "TA2(2)",
+            "request": "launch",
+            "mainClass": "semester1.Tugas9.TA2",
+            "projectName": "Maha-Besar_e209ab3c"
+        },
+        {
+            "type": "java",
+            "name": "TA3",
+            "request": "launch",
+            "mainClass": "semester1.Tugas9.TA3",
+            "projectName": "Maha-Besar_e209ab3c"
+        },
+        {
+            "type": "java",
+            "name": "TA4",
+            "request": "launch",
+            "mainClass": "semester1.Tugas9.TA4",
+            "projectName": "Maha-Besar_e209ab3c"
+        },
+        {
+            "type": "java",
+            "name": "ID",
+            "request": "launch",
+            "mainClass": "semester1.UTS.ID",
+            "projectName": "Maha-Besar_e209ab3c"
+        },
+        {
+            "type": "java",
+            "name": "Status",
+            "request": "launch",
+            "mainClass": "semester1.UTS.Status",
+            "projectName": "Maha-Besar_e209ab3c"
+        },
+        {
+            "type": "java",
+            "name": "Driver1",
+            "request": "launch",
+            "mainClass": "semester2.PBO.Driver1",
+            "projectName": "Maha-Besar_e209ab3c"
+        },
+        {
+            "type": "java",
+            "name": "Driver2",
+            "request": "launch",
+            "mainClass": "semester2.PBO.Driver2",
+            "projectName": "Maha-Besar_e209ab3c"
+        },
+        {
+            "type": "java",
+            "name": "Gojek",
+            "request": "launch",
+            "mainClass": "semester2.PBO.GOJEK.Gojek",
+            "projectName": "Maha-Besar_e209ab3c"
+        },
+        {
+            "type": "java",
+            "name": "ContohPolimorfismeOverloading",
+            "request": "launch",
+            "mainClass": "semester2.PBO.Polimorfism.ContohPolimorfismeOverloading",
+            "projectName": "Maha-Besar_e209ab3c"
+        },
+        {
+            "type": "java",
+            "name": "Driver",
+            "request": "launch",
+            "mainClass": "semester2.PBO.Polimorfism.Driver",
+            "projectName": "Maha-Besar_e209ab3c"
+        },
+        {
+            "type": "java",
+            "name": "DriverSuperStore",
+            "request": "launch",
+            "mainClass": "semester2.PBO.Polimorfism.DriverSuperStore",
+            "projectName": "Maha-Besar_e209ab3c"
+        },
+        {
+            "type": "java",
+            "name": "KendaraanContohOverriding",
+            "request": "launch",
+            "mainClass": "semester2.PBO.Polimorfism.KendaraanContohOverriding",
+            "projectName": "Maha-Besar_e209ab3c"
+        },
+        {
+            "type": "java",
+            "name": "Main(1)",
+            "request": "launch",
+            "mainClass": "semester2.PBO.TUMBAS.Main",
+            "projectName": "Maha-Besar_e209ab3c"
+        },
+        {
+            "type": "java",
+            "name": "Gojek(1)",
+            "request": "launch",
+            "mainClass": "semester2.PBO.Test.Gojek",
+            "projectName": "Maha-Besar_e209ab3c"
+        },
+        {
+            "type": "java",
+            "name": "Main(2)",
+            "request": "launch",
+            "mainClass": "semester2.PBO.UTS.Main",
+            "projectName": "Maha-Besar_e209ab3c"
+        }
+    ]
+}
