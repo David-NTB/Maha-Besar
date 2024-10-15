@@ -1,0 +1,4 @@
+sll.runThis(); = deret tidak urut
+sll.runThisSorted(); = deret terurut
+sll.runThisdelete(); = penghapusan data
+sll.runThisSearch(); = pencarian data
