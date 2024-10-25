@@ -1,4 +1,4 @@
-package Semester3.minggu1;
+package semester3.minggu1;
 
 import java.util.Scanner;
 

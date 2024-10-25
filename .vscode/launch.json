@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "DoubleLinkedList",
+            "request": "launch",
+            "mainClass": "semester3.minggu5.DoubleLinkedList",
+            "projectName": "Maha-Besar_e209ab3c"
+        },
+        {
+            "type": "java",
             "name": "MainHewan",
             "request": "launch",
             "mainClass": "semester2.PBO.UTS.MainHewan",

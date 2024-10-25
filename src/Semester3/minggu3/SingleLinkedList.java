@@ -1,4 +1,4 @@
-package Semester3.minggu4;
+package semester3.minggu3;
 
 import java.io.*;
 
