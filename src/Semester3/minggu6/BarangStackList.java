@@ -15,7 +15,7 @@ class Node1 {
     }
 }
 
-class Barang {
+class Barang { 
     private int id;
     private String nama;
     private int stok;
