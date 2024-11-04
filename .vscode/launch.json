@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "BarangStackList",
+            "request": "launch",
+            "mainClass": "semester3.minggu6.BarangStackList",
+            "projectName": "Maha-Besar_39adbe1a"
+        },
+        {
+            "type": "java",
             "name": "StackList",
             "request": "launch",
             "mainClass": "semester3.minggu6.StackList",
