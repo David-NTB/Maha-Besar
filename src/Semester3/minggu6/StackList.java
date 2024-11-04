@@ -11,7 +11,7 @@ class Node {
         data = d;
         next = null;
     }
-}
+} 
 
 public class StackList {
     Node top; // top of stack
