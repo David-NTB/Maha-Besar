@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "QueueListPasien",
+            "request": "launch",
+            "mainClass": "semester3.minggu7.QueueListPasien",
+            "projectName": "Maha-Besar_39adbe1a"
+        },
+        {
+            "type": "java",
+            "name": "QueueList",
+            "request": "launch",
+            "mainClass": "semester3.minggu7.QueueList",
+            "projectName": "Maha-Besar_39adbe1a"
+        },
+        {
+            "type": "java",
             "name": "BarangStackList",
             "request": "launch",
             "mainClass": "semester3.minggu6.BarangStackList",
